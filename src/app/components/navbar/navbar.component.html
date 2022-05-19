@@ -1,0 +1,15 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand mb-0 h1" [routerLink]="'/'">{{ nomeDoApp }}</a>
+      <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+        &#9776;
+      </button>
+      <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" [routerLink]="'/'" isMenuCollapsed = "true">Comprar</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
