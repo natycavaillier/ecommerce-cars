@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ComprarComponent } from './components/comprar/comprar.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
+import { FeedbackComponent } from './components/feedback/feedback.component';
 import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
@@ -17,6 +18,7 @@ import { LoginComponent } from './components/login/login.component';
     NavbarComponent,
     ComprarComponent,
     CadastroComponent,
+    FeedbackComponent,
     LoginComponent
   ],
   imports: [
