@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,10 +12,13 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
 import { LoginComponent } from './components/login/login.component';
 import { VenderComponent } from './components/vender/vender.component';
 import { NegociarComponent } from './components/negociar/negociar.component';
+import { CarroComponent } from './components/carro/carro.component';
+import { registerLocaleData } from '@angular/common';
+import ptBr from '@angular/common/locales/pt';
 import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NaoEncontradoComponent } from './components/nao-encontrador/nao-encontrado/nao-encontrado.component'
+import { NaoEncontradoComponent } from './components/nao-encontrador/nao-encontrado/nao-encontrado.component';
 
-
+registerLocaleData(ptBr);
 
 @NgModule({
   declarations: [
@@ -28,6 +31,7 @@ import { NaoEncontradoComponent } from './components/nao-encontrador/nao-encontr
     VenderComponent,
     FeedbackComponent,
     NegociarComponent,
+    CarroComponent,
     NaoEncontradoComponent
   ],
   imports: [
@@ -37,7 +41,9 @@ import { NaoEncontradoComponent } from './components/nao-encontrador/nao-encontr
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'pt' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

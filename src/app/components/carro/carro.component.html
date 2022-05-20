@@ -1,0 +1,32 @@
+<div class="card mb-5" style="width: 18rem;">
+    <img [src]="carro.imagem" class="card-img-top img-carro" alt="...">
+    <div class="card-body d-flex flex-column flex-wrap">
+        <div>
+            <div>
+                <h6 class="card-title">{{carro.modelo}}</h6>
+            </div>
+            <div>
+                <p class="card-text mb-2">{{carro.descricao}}</p>
+            </div>
+        </div>
+        <div class="mt-auto">
+            <h4 class="text-success">{{carro.preco | currency: 'BRL'}}</h4>
+            <span class="text-muted mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                </svg>
+                {{carro.localizacao}}
+            </span>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <span class="text-muted">{{carro.ano}}</span>
+                </div>
+                <div>
+                    <span class="text-muted">{{carro.kmRodados}}km</span>
+                </div>
+            </div>
+            <button [routerLink]="'/comprar/negociar'" class="btn btn-primary d-block mt-1" style="width: 100%;">Negociar</button>
+        </div>
+
+    </div>
