@@ -14,6 +14,7 @@ import { VenderComponent } from './components/vender/vender.component';
 import { NegociarComponent } from './components/negociar/negociar.component';
 import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
