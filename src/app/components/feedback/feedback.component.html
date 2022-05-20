@@ -1,7 +1,7 @@
 <h1 class="text-center">feedback do Usuário!</h1>
 
 <hr />
-<div class="container mt-4 shadow-1g ">
+<div class="container mt-4 shadow-1g">
   <div class="col-md-3"></div>
   <div class="col-med-6">
     <h4>
@@ -13,20 +13,26 @@
       <div class="row">
         <div class="col-md-4">
           <input type="radio" name="feed" class="pointer" /> &nbsp;&nbsp;<label
-          for="comentario" class="form-label">Comentário</label
+            for="comentario"
+            class="form-label"
+            >Comentário</label
           >
           <span *ngIf="comentario?.hasError('required')"></span>
         </div>
 
         <div class="col-md-4">
           <input type="radio" name="feed" class="pointer" /> &nbsp;&nbsp;<label
-          for="erro" class="form-label" >Reportar Algum Erro</label
+            for="erro"
+            class="form-label"
+            >Reportar Algum Erro</label
           >
           <span *ngIf="erro?.hasError('required')"></span>
         </div>
-        <div class="col-md-4" >
+        <div class="col-md-4">
           <input type="radio" name="feed" class="pointer" /> &nbsp;&nbsp;<label
-          for="quetionamento" class="form-label">Questionamentos</label
+            for="quetionamento"
+            class="form-label"
+            >Questionamentos</label
           >
           <span *ngIf="questionamento?.hasError('required')"></span>
         </div>
@@ -83,11 +89,7 @@
             >
           </small>
         </div>
-        <button
-          type="submit"
-          class="btn btn-primary"
-          
-        >
+        <button type="submit" class="btn btn-primary">
           Envie o seu Feedback
         </button>
       </div>
