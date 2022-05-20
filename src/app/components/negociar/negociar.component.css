@@ -1,0 +1,21 @@
+.containerForm {
+    display: grid;
+    grid-column: auto;
+    justify-content: end;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-top: 10px;
+}
+
+.containerNeg {
+    width: 400px;
+    grid-column: span;
+    border: 1px solid;
+    padding: 25px;
+    border-radius: 10px;
+    border-color: #bab5b5;
+}
+
+.bottonNeg {
+    width: 100%;
+}
