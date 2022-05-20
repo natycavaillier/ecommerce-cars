@@ -9,7 +9,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ComprarComponent } from './components/comprar/comprar.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { VenderComponent } from './components/vender/vender.component';
 import { NegociarComponent } from './components/negociar/negociar.component';
