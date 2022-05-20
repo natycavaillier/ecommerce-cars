@@ -15,6 +15,8 @@ import { NegociarComponent } from './components/negociar/negociar.component';
 import { CarroComponent } from './components/carro/carro.component';
 import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
+import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NaoEncontradoComponent } from './components/nao-encontrador/nao-encontrado/nao-encontrado.component';
 
 registerLocaleData(ptBr);
 
@@ -29,12 +31,15 @@ registerLocaleData(ptBr);
     VenderComponent,
     FeedbackComponent,
     NegociarComponent,
-    CarroComponent
+    CarroComponent,
+    NaoEncontradoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt' }
