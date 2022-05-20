@@ -13,6 +13,8 @@ import { LoginComponent } from './components/login/login.component';
 import { VenderComponent } from './components/vender/vender.component';
 import { NegociarComponent } from './components/negociar/negociar.component';
 import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NaoEncontradoComponent } from './components/nao-encontrador/nao-encontrado/nao-encontrado.component'
+
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     VenderComponent,
     FeedbackComponent,
-    NegociarComponent
+    NegociarComponent,
+    NaoEncontradoComponent
   ],
   imports: [
     BrowserModule,
