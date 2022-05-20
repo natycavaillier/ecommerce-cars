@@ -3,3 +3,8 @@
     max-height: 200px;
     object-fit: cover;
 }
+
+.card {
+    min-height: 32rem;
+    max-height: 32rem;
+}

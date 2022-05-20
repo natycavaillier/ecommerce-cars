@@ -78,15 +78,6 @@ export class CarrosService {
       ano: '2018/2019',
       kmRodados: 51300,
       localizacao: 'Barueri, SP'
-    },
-    {
-      imagem: 'https://img.freepik.com/vetores-gratis/carro-sedan-azul-isolado-no-branco-vector_53876-67375.jpg?t=st=1653005126~exp=1653005726~hmac=fed3fdb5c03fc566e9efbf8290f5bef8afc052f764787e4c57220f49b2672215&w=826',
-      modelo: 'HONDA CIVIC',
-      descricao: '1.5 16V TURBO GASOLINA TOURING 4P CVT',
-      preco: 134990,
-      ano: '2018/2019',
-      kmRodados: 51300,
-      localizacao: 'Barueri, SP'
     }
   ];
 
