@@ -1,1 +1,98 @@
-<p>feedback do Usuário!</p>
+<h1 class="text-center">feedback do Usuário!</h1>
+
+<hr />
+<div class="container mt-4 shadow-1g">
+  <div class="col-md-3"></div>
+  <div class="col-med-6">
+    <h4>
+      A sua opinião é muito importante para nós, conte-nos como foi a sua
+      experiencia em nosso site!
+    </h4>
+    <hr />
+    <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" class="m-1">
+      <div class="row">
+        <div class="col-md-4">
+          <input type="radio" name="feed" class="pointer" /> &nbsp;&nbsp;<label
+            for="comentario"
+            class="form-label"
+            >Comentário</label
+          >
+          <span *ngIf="comentario?.hasError('required')"></span>
+        </div>
+
+        <div class="col-md-4">
+          <input type="radio" name="feed" class="pointer" /> &nbsp;&nbsp;<label
+            for="erro"
+            class="form-label"
+            >Reportar Algum Erro</label
+          >
+          <span *ngIf="erro?.hasError('required')"></span>
+        </div>
+        <div class="col-md-4">
+          <input type="radio" name="feed" class="pointer" /> &nbsp;&nbsp;<label
+            for="quetionamento"
+            class="form-label"
+            >Questionamentos</label
+          >
+          <span *ngIf="questionamento?.hasError('required')"></span>
+        </div>
+        <div class="form-group mt-3 mb-3">
+          <label for="nome" class="form-label">Nome</label>
+          <input
+            formControlName="nome"
+            id="nome"
+            type="text"
+            class="form-control"
+          />
+          <small class="text-danger" *ngIf="nome?.touched && nome?.invalid">
+            <span *ngIf="nome?.hasError('required')">O nome é obrigatório</span>
+            <span *ngIf="nome?.hasError('minlength')"
+              >O mínimo é 5 caracteres</span
+            >
+          </small>
+        </div>
+        <div class="form-group mb-2">
+          <label for="email" class="form-label">Email</label>
+          <input
+            formControlName="email"
+            id="email"
+            type="email"
+            class="form-control"
+          />
+          <small class="text-danger" *ngIf="email?.touched && email?.invalid">
+            <span *ngIf="email?.hasError('required')"
+              >O email é obrigatório</span
+            >
+            <span *ngIf="email?.hasError('email')">O email é inválido</span>
+          </small>
+        </div>
+        <div class="form-group mb-2">
+          <label class="form-label"> Descreva o seu feedback</label>
+          <textarea
+            FormControlName="feedback"
+            rows="4"
+            type="text"
+            class="form-control"
+          ></textarea>
+          <small
+            class="text-danger"
+            *ngIf="feedback?.touched && feedback?.invalid"
+          >
+            <span *ngIf="feedback?.hasError('required')"
+              >O feedback é obrigatório</span
+            >
+            <span *ngIf="feedback?.hasError('minlength')"
+              >O feedback é inválido</span
+            >
+            <span *ngIf="feedback?.hasError('maxlength')"
+              >O feedback é inválido</span
+            >
+          </small>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Envie o seu Feedback
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
