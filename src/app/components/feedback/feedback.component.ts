@@ -1,19 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  AbstractControl,
+ 
   FormBuilder,
-  ValidationErrors,
-  Validators,
+  Validators
+
 } from '@angular/forms';
 
-function onlySoulcode(control: AbstractControl): ValidationErrors | null {
-  if(Validators.email(control) === null && Validators.required(control) === null) {
-    if (!control.value.includes('@soulcodeacademy.org')) {
-      return { onlysoulcode: true };
-    }
-  }
-  return null;
-}
 
 @Component({
   selector: 'app-feedback',
@@ -24,10 +16,13 @@ export class FeedbackComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {}
 
-  feddbackForm = this.fb.group({
+  feedbackForm = this.fb.group({
     nome: ['', [Validators.required, Validators.minLength(2)]],
-    email: ['', [Validators.required, Validators.email, onlySoulcode]],
-    feedback: ['', [Validators.required, Validators.maxLength(150)]],
+    email: ['', [Validators.required, Validators.email,]],
+    feedback: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(150)]],
+    comentario:['', [Validators.required]],
+    erro:['',[Validators.required]],
+    questionamento:['', [Validators.required]]
   });
 
   get nome() {
@@ -38,18 +33,28 @@ export class FeedbackComponent implements OnInit {
     return this.feedbackForm.get('email');
   }
 
-  get feddback() {
+  get feedback() {
     return this.feedbackForm.get('feedback');
+  }
+
+  get comentario() {
+    return this.feedbackForm.get('comentario');
+  }
+
+  get erro() {
+    return this.feedbackForm.get('erro');
+  }
+
+  get questionamento() {
+    return this.feedbackForm.get('questionamento');
   }
 
   onSubmit() {
     alert('Obrigado por seu feedback!');
-    console.log(this.feedbackForm.value);
+    
   }
 
   ngOnInit(): void {}
 }
 
-  ngOnInit(): void {
-  }
-}
+  
