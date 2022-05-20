@@ -1,5 +1,5 @@
 <div class="card mb-5" style="width: 18rem;">
-    <img [src]="carro.imagem" class="card-img-top produto-img" alt="...">
+        <img [src]="carro.imagem" class="card-img-top img-carro" alt="...">
     <div class="card-body">
         <h6 class="card-title">{{carro.modelo}}</h6>
         <p class="card-text mb-2">{{carro.descricao}}</p>
@@ -16,10 +16,9 @@
                     class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                     <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
                 </svg>
-                {{carro.localizacao}}</span>
+                {{carro.localizacao}}
+            </span>
             <button class="btn btn-primary d-block">Negociar</button>
         </div>
-
-        <i class="bi bi-geo-alt-fill"></i>
     </div>
 </div>
