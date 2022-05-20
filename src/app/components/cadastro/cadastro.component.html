@@ -1,77 +1,84 @@
-<h5>Para continuar com seu cadastro, complete as informações a seguir:</h5>
-  <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()" class="mb-3">
-    <div class="col-md-6">
-        <label for="nome" class="form-label">Nome Completo</label>
-        <input  formControlName ="nome"type="text" class="form-control" id="nome" placeholder="">
-        <small class="text-danger" *ngIf="nome?.touched && nome?.invalid">
-            <span *ngIf="nome?.hasError('required')">Campo obrigatório</span>
-            <span *ngIf="nome?.hasError('minLength')">Mínimo 4 caracteres</span>
-        </small>
+<h4>Para continuar com seu cadastro, complete as informações a seguir:</h4>
+
+<div class="containerForm">
+  <div class="containerNeg">
+    <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()" class="mb-3">
+      <div class="mb-3">
+          <label for="nome" class="form-label"></label>
+          <input  formControlName ="nome"type="text" class="form-control" id="nome" placeholder="Nome Completo">
+          <small class="text-danger" *ngIf="nome?.touched && nome?.invalid">
+              <span *ngIf="nome?.hasError('required')">Campo obrigatório</span>
+              <span *ngIf="nome?.hasError('minLength')">Mínimo 4 caracteres</span>
+          </small>
+        </div>
+      <div class="mb-3">
+        <label for="inputEmail4" class="form-label"></label>
+        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+        <small class="text-danger" *ngIf="email?.touched && email?.invalid">
+          <span *ngIf="email?.hasError('required')">Campo obrigatório</span>
+          <span *ngIf="email?.hasError('minLength')">Email inválido</span>
+          <span *ngIf="email?.hasError('seuCadastro')">Não permitido</span>
+      </small>
       </div>
-    <div class="col-md-6">
-      <label for="inputEmail4" class="form-label">Email</label>
-      <input type="email" class="form-control" id="inputEmail4">
-      <small class="text-danger" *ngIf="email?.touched && email?.invalid">
-        <span *ngIf="email?.hasError('required')">Campo obrigatório</span>
-        <span *ngIf="email?.hasError('minLength')">Email inválido</span>
-        <span *ngIf="email?.hasError('seuCadastro')">Não permitido</span>
-    </small>
-    </div>
-    <div class="col-md-6">
-      <label for="inputPassword4" class="form-label">Senha</label>
-      <input type="password" class="form-control" id="inputPassword4">
-    </div>
-    <div class="col-md-6">
-    <label for="inputState" class="form-label">Estado</label>
-      <select id="inputState" class="form-select">
-        <option>Selecione </option>
-        <option>AC</option>
-        <option>AL</option>
-        <option>AP</option>
-        <option>AM</option>
-        <option>BA</option>
-        <option>CE</option>
-        <option>DF</option>
-        <option>ES</option>
-        <option>GO</option>
-        <option>MA</option>
-        <option>MT</option>
-        <option>MS</option>
-        <option>MG</option>
-        <option>PA</option>
-        <option>PB</option>
-        <option>PR</option>
-        <option>PE</option>
-        <option>PI</option>
-        <option>RJ</option>
-        <option>RN</option>
-        <option>RS</option>
-        <option>RO</option>
-        <option>RR</option>
-        <option>SC</option>
-        <option>SP</option>
-        <option>SE</option>
-        <option>TO</option>
-      </select>
-    </div>
-    <div class="col-md-6">
-      <label for="inputCity" class="form-label">Cidade</label>
-      <input type="text" class="form-control" id="inputCity">
-      <small class="text-danger" *ngIf="cidade?.touched && cidade?.invalid">
-        <span *ngIf="cidade?.hasError('required')">Campo obrigatório</span>
-        <span *ngIf="cidade?.hasError('minLength')">Mínimo 4 caracteres</span>
-    </small>
-    </div>
-    <div class="col-md-2">
-      <label for="inputNumber" class="form-label">CEP</label>
-      <input type="number" class="form-control" id="inputNumber">
-      <small class="text-danger" *ngIf="cep?.touched && cep?.invalid">
-        <span *ngIf="cep?.hasError('required')">Campo obrigatório</span>
-        <span *ngIf="cep?.hasError('minLength')">Insira um CEP válido</span>
-    </small>
-    </div>
-    <div class="col-md-2">
-      <button class="btn btn-primary" [disabled]="cadastroForm.invalid">Cadastrar</button>
-    </div>
-  </form>
+      <div class="mb-3">
+        <label for="inputPassword4" class="form-label"></label>
+        <input type="password" class="form-control" id="inputPassword4" placeholder="Senha">
+      </div>
+      <div class="col-md-6">
+      <label for="inputState" class="form-label">Estado</label>
+        <select id="inputState" class="form-select">
+          <option>Selecione </option>
+          <option>AC</option>
+          <option>AL</option>
+          <option>AP</option>
+          <option>AM</option>
+          <option>BA</option>
+          <option>CE</option>
+          <option>DF</option>
+          <option>ES</option>
+          <option>GO</option>
+          <option>MA</option>
+          <option>MT</option>
+          <option>MS</option>
+          <option>MG</option>
+          <option>PA</option>
+          <option>PB</option>
+          <option>PR</option>
+          <option>PE</option>
+          <option>PI</option>
+          <option>RJ</option>
+          <option>RN</option>
+          <option>RS</option>
+          <option>RO</option>
+          <option>RR</option>
+          <option>SC</option>
+          <option>SP</option>
+          <option>SE</option>
+          <option>TO</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="inputCity" class="form-label"></label>
+        <input type="text" class="form-control" id="inputCity" placeholder="Cidade">
+        <small class="text-danger" *ngIf="cidade?.touched && cidade?.invalid">
+          <span *ngIf="cidade?.hasError('required')">Campo obrigatório</span>
+          <span *ngIf="cidade?.hasError('minLength')">Mínimo 4 caracteres</span>
+      </small>
+      </div>
+      <div class="mb-3">
+        <label for="inputNumber" class="form-label"></label>
+        <input type="number" class="form-control" id="inputNumber" placeholder="CEP">
+        <small class="text-danger" *ngIf="cep?.touched && cep?.invalid">
+          <span *ngIf="cep?.hasError('required')">Campo obrigatório</span>
+          <span *ngIf="cep?.hasError('minLength')">Insira um CEP válido</span>
+      </small>
+      </div>
+      <div>
+        <button class="bottonNeg btn btn-primary" [disabled]="cadastroForm.invalid">Cadastrar</button>
+      </div>
+    </form>
+  </div>  
+
+</div>
+
 
