@@ -1,1 +1,30 @@
-<p>vender works!</p>
+    <div class="container containerVender mt-5 p-5">
+        <form [formGroup]="venderForm" (ngSubmit)="onSubmit()">
+            <div class="text-center mb-5">
+                <h1>Cadastre seu carro</h1>
+            </div>
+            <div class="mb-4 mt-4">
+                <input formControlName="modelo" type="text" class="form-control" placeholder="Modelo do carro">
+            </div>
+            <div class="mb-4 mt-4">
+                <input formControlName="descricao" type="text" class="form-control" placeholder="Descrição e especificações">
+            </div>
+            <div class="mb-4 mt-4">
+                <input formControlName="preco" type="number" class="form-control" placeholder="Preço">
+            </div>
+            <div class="mb-4 mt-4">
+                <input formControlName="ano" type="number" class="form-control" placeholder="Ano">
+            </div>
+            <div class="mb-3 mt-4">
+                <input formControlName="kmRodados" type="number" class="form-control" placeholder="Quilometragem">
+            </div>
+            <div class="mb-3 mt-4">
+                <input formControlName="localizacao" type="string" class="form-control" placeholder="Localização">
+            </div>
+            <div>
+                <button class="bottonVender btn btn-primary" [disabled]="venderForm.invalid">
+                    Publicar
+                </button>
+            </div>
+        </form>
+    </div>

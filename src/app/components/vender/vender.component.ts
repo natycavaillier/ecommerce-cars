@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-vender',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VenderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
+
+  venderForm = this.fb.group({
+
+  })
+
+  onSubmit(){
+    alert('Anúncio publicado!');
+  }
 
   ngOnInit(): void {
   }
