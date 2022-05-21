@@ -1,9 +1,14 @@
 .imgCar {
     width: 100%;
+    min-height: 600px;
     max-height: 600px;
-    height: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
+    object-fit: cover;
+    border-radius: 2px;
 }
+
+.textos-home {
+    text-shadow: 3px 3px 3px black, 0 0 5px black;
+}
+
 
 
