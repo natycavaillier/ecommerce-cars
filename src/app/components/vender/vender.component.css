@@ -1,0 +1,11 @@
+.containerVender {
+    border: 1px solid;
+    border-radius: 10px;
+    border-color: #bab5b5;
+    width: 60%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.bottonVender {
+    width: 100%;
+}
