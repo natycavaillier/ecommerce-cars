@@ -1,4 +1,5 @@
 export interface Carro {
+    id: number;
     imagem: string;
     modelo: string;
     descricao: string;
