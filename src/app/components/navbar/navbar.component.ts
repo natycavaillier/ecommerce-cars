@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  nomeDoApp: String = 'Soul Cars';
+  nomeDoApp: String = 'SoulCars';
   isMenuCollapsed = true;
 
   constructor() { }
