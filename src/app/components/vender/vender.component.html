@@ -1,30 +1,63 @@
-    <div class="container containerVender mt-5 p-5">
-        <form [formGroup]="venderForm" (ngSubmit)="onSubmit()">
-            <div class="text-center mb-5">
-                <h1>Cadastre seu carro</h1>
+<div class="container containerVender mt-5 p-5">
+    <form [formGroup]="venderForm" (ngSubmit)="onSubmit()">
+        <div class="text-center mb-5">
+            <h1>Cadastre seu carro</h1>
+        </div>
+        <div class="mb-4 mt-4">
+            <input [(ngModel)]="carro.modelo" formControlName="modelo" type="text" class="form-control"
+                placeholder="Modelo do carro">
+            <small class="text-danger" *ngIf="modelo?.invalid && modelo?.touched">
+                <span *ngIf="modelo?.hasError('required')">O modelo é obrigatório!</span>
+                <span *ngIf="modelo?.hasError('minlength')">O minimo são 5 caracteres</span>
+            </small>
+        </div>
+        <div class="mb-4 mt-4">
+            <input [(ngModel)]="carro.descricao" formControlName="descricao" type="text" class="form-control"
+                placeholder="Descrição e especificações">
+            <small class="text-danger" *ngIf="descricao?.invalid && descricao?.touched">
+                <span *ngIf="descricao?.hasError('required')">A descricao é obrigatória!</span>
+                <span *ngIf="descricao?.hasError('minlength')">O minimo são 10 caracteres</span>
+            </small>
+        </div>
+        <div class="mb-4 mt-4">
+            <input [(ngModel)]="carro.imagem" formControlName="imagem" type="text" class="form-control" placeholder="Link da imagem">
+            <small class="text-danger" *ngIf="imagem?.invalid && imagem?.touched">
+                <span *ngIf="imagem?.hasError('required')">O link da imagem é obrigatório!</span>
+            </small>
+        </div>
+        <div class="row mb-4 mt-4">
+            <div class="col">
+                <input [(ngModel)]="carro.preco" formControlName="preco" type="number" class="form-control" min="0" placeholder="Preço">
+                <small *ngIf="preco?.touched && preco?.invalid" class="text-danger">
+                    <span *ngIf="preco?.hasError('required')">O preço é obrigatório!</span>
+                    <span *ngIf="preco?.hasError('min')">O preço mínimo é R$1000</span>
+                </small>
             </div>
-            <div class="mb-4 mt-4">
-                <input formControlName="modelo" type="text" class="form-control" placeholder="Modelo do carro">
+            <div class="col">
+                <input [(ngModel)]="carro.ano" formControlName="ano" type="text" class="form-control"  placeholder="Ano [XXXX/XXXX]">
+                <small *ngIf="ano?.touched && ano?.invalid" class="text-danger">
+                    <span *ngIf="ano?.hasError('required')">O ano é obrigatório!</span>
+                </small>
             </div>
-            <div class="mb-4 mt-4">
-                <input formControlName="descricao" type="text" class="form-control" placeholder="Descrição e especificações">
+        </div>
+        <div class="row mb-4 mt-4">
+            <div class="col">
+                <input [(ngModel)]="carro.kmRodados" formControlName="kmRodados" type="number" class="form-control" placeholder="Quilometragem">
+                <small *ngIf="kmRodados?.touched && kmRodados?.invalid" class="text-danger">
+                    <span *ngIf="kmRodados?.hasError('required')">A quilometragem é obrigatória!</span>
+                </small>
             </div>
-            <div class="mb-4 mt-4">
-                <input formControlName="preco" type="number" class="form-control" placeholder="Preço">
+            <div class="col">
+                <input [(ngModel)]="carro.localizacao" formControlName="localizacao" type="string" class="form-control" placeholder="Localização">
+                <small *ngIf="localizacao?.touched && localizacao?.invalid" class="text-danger">
+                    <span *ngIf="localizacao?.hasError('required')">A localização é obrigatória!</span>
+                </small>
             </div>
-            <div class="mb-4 mt-4">
-                <input formControlName="ano" type="number" class="form-control" placeholder="Ano">
-            </div>
-            <div class="mb-3 mt-4">
-                <input formControlName="kmRodados" type="number" class="form-control" placeholder="Quilometragem">
-            </div>
-            <div class="mb-3 mt-4">
-                <input formControlName="localizacao" type="string" class="form-control" placeholder="Localização">
-            </div>
-            <div>
-                <button class="bottonVender btn btn-primary" [disabled]="venderForm.invalid">
-                    Publicar
-                </button>
-            </div>
-        </form>
-    </div>
+        </div>
+        <div class="mt-5">
+            <button class="bottonVender btn btn-primary" [disabled]="venderForm.invalid">
+                Publicar Anúncio
+            </button>
+        </div>
+    </form>
+</div>

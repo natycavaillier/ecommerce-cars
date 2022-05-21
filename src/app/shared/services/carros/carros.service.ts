@@ -89,9 +89,18 @@ export class CarrosService {
     }
   ];
 
+  pushCarros(carro: Carro){
+    this.carros.push(carro);
+  }
+
   getCarros(): Carro[] {
     return this.carros;
   }
+
+  getCarro(id: number) {
+    return this.carros[id - 1];
+  }
+
 
   constructor() { }
 }
