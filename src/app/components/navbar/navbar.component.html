@@ -1,25 +1,28 @@
-<nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand mb-0 h1" [routerLink]="'/'">{{ nomeDoApp }}</a>
-      <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
-        &#9776;
+  <nav class="navbar fi navbar-expand-lg navbar-light bg-light nav-b" >
+    <div class="container-fluid nav-bar" >
+      <a class="navbar-brand" [routerLink]="'/'">
+        <img src="../../../assets/img/iconcar.png" alt=""  width="30" height="24" class="d-inline-block align-text-top p-10">
+        {{ nomeDoApp }}
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
-        <ul class="navbar-nav">
+      <div  class="collapse navbar-collapse d-flex " style="justify-content: end">
+        <ul class="navbar-nav d-flex" >
           <li class="nav-item active">
-            <a class="nav-link" [routerLink]="'/comprar'" (click)="isMenuCollapsed = true">Comprar</a>
+            <a class="nav-link" [routerLink]="'/comprar'" >Comprar</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" [routerLink]="'/vender'"(click)="isMenuCollapsed = true">Vender</a>
+            <a class="nav-link" [routerLink]="'/vender'">Vender</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" [routerLink]="'/cadastro'"(click)="isMenuCollapsed = true">Cadastro</a>
+            <a class="nav-link" [routerLink]="'/cadastro'">Cadastro</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" [routerLink]="'/login'"(click)="isMenuCollapsed = true">Login</a>
+            <a class="nav-link" [routerLink]="'/login'">Login</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" [routerLink]="'/feedback'"(click)="isMenuCollapsed = true">Feedback</a> 
+            <a class="nav-link" [routerLink]="'/feedback'">Feedback</a> 
           </li>
         </ul>
       </div>
