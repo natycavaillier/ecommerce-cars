@@ -1,21 +1,48 @@
+.containerImage {
+    max-height: 45vh;
+    height: 45vh;
+}
+.img {
+    max-height: 60vh;
+    height: 100%;
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1px;
+
+}
 .containerForm {
-    display: grid;
-    grid-column: auto;
     justify-content: end;
-    margin-right: 10%;
-    margin-left: 10%;
-    margin-top: 10px;
+    margin-top: 2vh;
+    margin-right: 0%;
 }
 
 .containerNeg {
     width: 400px;
-    grid-column: span;
     border: 1px solid;
     padding: 25px;
     border-radius: 10px;
     border-color: #bab5b5;
+    background-color: #fff;
 }
 
 .bottonNeg {
     width: 100%;
+    background-color: #1197cc;
+    box-shadow: #094c66 4px 4px 0px;
+    border-radius: 8px;
+    transition: transform 200ms, box-shadow 200ms;
 }
+
+.bottonNeg:hover {
+    transform: translateY(4px) translateX(4px);
+    box-shadow: #094c66 0px 0px 0px;
+}
+
+.containerInfo {
+    padding: 25px;
+    margin-top: 2vh;
+
+}
+
+

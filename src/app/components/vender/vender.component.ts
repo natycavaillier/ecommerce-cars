@@ -21,7 +21,10 @@ export class VenderComponent implements OnInit {
     preco: ['', [Validators.required, Validators.min(1000)]],
     ano: ['', [Validators.required]],
     kmRodados: ['', [Validators.required]],
-    localizacao: ['', [Validators.required]]
+    localizacao: ['', [Validators.required]],
+    cor: ['', [Validators.required]],
+    finalPlaca: ['', [Validators.required, Validators.maxLength(1)]],
+    marca: ['', [Validators.required]],
   })
 
   //#region Getters
@@ -46,7 +49,16 @@ export class VenderComponent implements OnInit {
   get localizacao() {
     return this.venderForm.get('localizacao');
   }
-  //#endregion
+  get cor() {
+    return this.venderForm.get('cor');
+  }
+  get finalPlaca() {
+    return this.venderForm.get('finalPlaca');
+  }
+  get marca() {
+    return this.venderForm.get('marca')
+  }
+
 
   onSubmit(){
     this.carro.modelo = this.carro.modelo.toUpperCase();

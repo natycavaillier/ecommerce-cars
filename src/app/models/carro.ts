@@ -7,6 +7,8 @@ export interface Carro {
     ano: string;
     kmRodados: number;
     localizacao: string;
+    cor: string;
+    finalPlaca: number;
     marca: MarcaCarro;
 }
 

@@ -1,48 +1,92 @@
-<div class="containerForm">
-
-    <div class="containerNeg ">
-        <form [formGroup]="negociarForm" (ngSubmit)="onSubmit()">
-            <div>
-                <h1>{{carro.preco | currency: 'BRL'}}</h1>
-            </div>
-            <div class="mb-3">
-                <label for="nome" class="form-label"></label>
-                <input formControlName="nome" type="text" class="form-control" placeholder="Nome">
-                <small class="text-danger" *ngIf="nome?.invalid && nome?.touched">
-                    <span *ngIf="nome?.hasError('required')">O nome é obrigatorio!</span>
-                    <span *ngIf="nome?.hasError('minlength')" >O minimo é 4 caracteres</span>
-                </small>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label"></label>
-                <input formControlName="email" type="email" class="form-control" placeholder="E-mail">
-                <small class="text-danger" *ngIf="email?.invalid && email?.touched">
-                    <span *ngIf="email?.hasError('required')">O email é obrigatorio</span>
-                    <span *ngIf="email?.hasError('email')">O email é inválido</span>
-                </small>
-            </div>
-            <div class="mb-3">
-                <label for="" class="form-label"></label>
-                <input formControlName="telefone" type="number" class="form-control" placeholder="Telefone">
-                <small class="text-danger" *ngIf="telefone?.invalid && telefone?.touched">
-                    <span *ngIf="telefone?.hasError('required')">Telefone inválido</span>
-                </small>
-            </div>
-            <div class="mb-3">
-                <label for="" class="form-label">Mensagem</label>
-                <textarea formControlName="mensagem" class="form-control" id="#" rows="3"
-                    placeholder="Olá, tenho interesse no veiculo."></textarea>
-                    <small class="text-danger" *ngIf="mensagem?.invalid && email?.touched">
-                        <span *ngIf="mensagem?.hasError('required')">A mensagem é obrigatoria</span>
-                        <span *ngIf="mensagem?.hasError('minlength')">O minimo é 5 caracteres</span>
-                        <span *ngIf="mensagem?.hasError('maxlength')">O maximo é 100 caracteres</span>
-                    </small>
-            </div>
-            <div >
-                <button class=" bottonNeg btn btn-primary" [disabled]="negociarForm.invalid">
-                    Enviar mensagem
-                </button>
-            </div>
-        </form>
+<div class="container-xxl h-100">
+    <div class="containerImage">
+        <img class="img" [src]="carro.imagem" alt="">
     </div>
-</div>
+    <div class="d-flex bd-highlight" >
+        <div class="p-2 w-100 bd-highlight containerInfo" >
+            <div class="d-flex justify-content-start">
+                <h2>{{carro.modelo}}</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <b>Cidade</b>
+                    <p>{{carro.localizacao}}</p>
+                </div>
+                <div class="col-sm">
+                    <b>Ano</b>
+                    <p>{{carro.ano}}</p>
+                </div>
+                <div class="col-sm">
+                    <b>Quilometragem</b>
+                    <p>{{carro.kmRodados}} Km</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-sm">
+                    <b>Descrição</b>
+                    <p>{{carro.descricao}}</p>
+                </div>
+                <div class="col-sm">
+                    <b>Cor</b>
+                    <p>{{carro.cor}}</p>
+                </div>
+                <div class="col-sm">
+                    <b>Final da Placa</b>
+                    <p>{{carro.finalPlaca}}</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-sm">
+                    <b>Marca</b>
+                    <p>{{carro.marca}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="p-2 flex-shrink-1 bd-highlight containerForm">
+            <div class="containerNeg">
+                <form [formGroup]="negociarForm" (ngSubmit)="onSubmit()">
+                    <div>
+                        <h1>{{carro.preco | currency: 'BRL'}}</h1>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nome" class="form-label"></label>
+                        <input formControlName="nome" type="text" class="form-control" placeholder="Nome">
+                        <small class="text-danger" *ngIf="nome?.invalid && nome?.touched">
+                            <span *ngIf="nome?.hasError('required')">O nome é obrigatorio!</span>
+                            <span *ngIf="nome?.hasError('minlength')">O minimo é 4 caracteres</span>
+                        </small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label"></label>
+                        <input formControlName="email" type="email" class="form-control" placeholder="E-mail">
+                        <small class="text-danger" *ngIf="email?.invalid && email?.touched">
+                            <span *ngIf="email?.hasError('required')">O email é obrigatorio</span>
+                            <span *ngIf="email?.hasError('email')">O email é inválido</span>
+                        </small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label"></label>
+                        <input formControlName="telefone" type="number" class="form-control" placeholder="Telefone">
+                        <small class="text-danger" *ngIf="telefone?.invalid && telefone?.touched">
+                            <span *ngIf="telefone?.hasError('required')">Telefone inválido</span>
+                        </small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Mensagem</label>
+                        <textarea formControlName="mensagem" class="form-control" id="#" rows="3"
+                            placeholder="Olá, tenho interesse no veiculo."></textarea>
+                        <small class="text-danger" *ngIf="mensagem?.invalid && mensagem?.touched">
+                            <span *ngIf="mensagem?.hasError('required')">A mensagem é obrigatoria</span>
+                            <span *ngIf="mensagem?.hasError('minlength')">O minimo é 5 caracteres</span>
+                            <span *ngIf="mensagem?.hasError('maxlength')">O maximo é 100 caracteres</span>
+                        </small>
+                    </div>
+                    <div>
+                        <button class=" bottonNeg btn btn-primary" [disabled]="negociarForm.invalid">
+                            Enviar mensagem
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

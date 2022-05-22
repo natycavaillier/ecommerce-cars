@@ -48,6 +48,7 @@ export class NegociarComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.inscricao.unsubscribe()
   }
 
   onSubmit(){
