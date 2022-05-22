@@ -25,7 +25,7 @@ export class CadastroComponent implements OnInit {
     nome: ['', [Validators.required, Validators.minLength(4)]],
     email: ['', [Validators.required, Validators.email, onlyCadastro]],
     senha: ['', [Validators.required, Validators.minLength(5)]],
-    cidade: ['', [Validators.required, Validators.minLength(20)]],
+    cidade: ['', [Validators.required]],
     cep: ['', [Validators.required, Validators.minLength(8)]]
   });
 
@@ -51,8 +51,9 @@ export class CadastroComponent implements OnInit {
   }
 
   onSubmit() {
-    alert('Bem-vindo(a)!');
-    console.log(this.cadastroForm.value);
+    this.cadastroForm.reset();
+    alert('Cadastro feito com sucesso!');
+   
   }
 
   ngOnInit(): void {
