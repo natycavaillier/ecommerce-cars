@@ -8,3 +8,7 @@
     min-height: 32rem;
     max-height: 32rem;
 }
+
+.card:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
