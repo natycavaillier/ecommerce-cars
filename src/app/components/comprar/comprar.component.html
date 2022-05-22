@@ -1,8 +1,59 @@
-<div class = "mx-1 mt-5">
-    <div class="container">
-        <div class="row">
-            <div class="col" *ngFor="let carro of carros">
-                <app-carro [dadoCarro]="carro"></app-carro>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 mt-5 mb-5" style="border-right: 1px solid #bab5b5;">
+            <div class="container">
+                <div class="row">
+                    <h6>Filtro por modelo</h6>
+                    <form class="d-flex" role="search">
+                        <input [(ngModel)]="inputModelo" name="inputModelo" class="form-control me-2" type="search" placeholder="Modelo"
+                            aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit" (click)="buscarModelo(inputModelo)">Buscar</button>
+                    </form>
+                </div>
+                <div class="row my-4 d-flex justify-content-center">
+                    <h6>Filtro por marca</h6>
+                    <div class="col-sm-4 d-flex justify-content-center div-marca m-1">
+                        <img class="img-comprar" src="../../../assets/img/img-volkswagen.png" (click)="onMarca('volkswagen')" alt="">
+                    </div>
+                    <div class="col-sm-4 d-flex justify-content-center div-marca m-1">
+                        <img class="img-comprar" src="../../../assets/img/img-honda.png" (click)="onMarca('honda')" alt="">
+                    </div>
+                    <div class="col-sm-4 d-flex justify-content-center div-marca m-1">
+                        <img class="img-comprar" src="../../../assets/img/img-fiat.png" (click)="onMarca('fiat')" alt="">
+                    </div>
+                    <div class="col-sm-4 d-flex justify-content-center div-marca m-1">
+                        <img class="img-comprar" src="../../../assets/img/img-toyota.png" (click)="onMarca('toyota')" alt="">
+                    </div>
+                    <div class="col-sm-4 d-flex justify-content-center div-marca m-1">
+                        <img class="img-comprar" src="../../../assets/img/img-hyundai.png" (click)="onMarca('hyundai')" alt="">
+                    </div>
+                    <div class="col-sm-4 d-flex justify-content-center div-marca m-1">
+                        <img class="img-comprar" src="../../../assets/img/img-mitsubishi.png" (click)="onMarca('mitsubishi')" alt="">
+                    </div>
+                    <div class="col-sm-4 d-flex justify-content-center div-marca m-1">
+                        <img class="img-comprar" src="../../../assets/img/img-ford.png" (click)="onMarca('ford')" alt="">
+                    </div>
+                    <div class="col-sm-4 d-flex justify-content-center div-marca m-1">
+                        <img class="img-comprar" src="../../../assets/img/img-chevrolet.png" (click)="onMarca('chevrolet')" alt="">
+                    </div>
+                    <div class="col-sm-4 d-flex justify-content-center div-marca m-1">
+                        <img class="img-comprar" src="../../../assets/img/img-renault.png" (click)="onMarca('renault')" alt="">
+                    </div>
+                </div>
+                <div class="row my-4">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-9">
+            <div class="mt-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col d-flex justify-content-evenly" *ngFor="let carro of carros">
+                            <app-carro [dadoCarro]="carro"></app-carro>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -97,7 +97,7 @@ export class CarrosService {
       cor: 'Beje',
       finalPlaca: 9,
       marca: MarcaCarro.HONDA
-    },
+    }
   ];
 
   pushCarros(carro: Carro){
