@@ -26,7 +26,7 @@
                     <span class="text-muted">{{carro.kmRodados}}km</span>
                 </div>
             </div>
-            <button [routerLink]="'/comprar/negociar'" class="btn btn-primary d-block mt-1" style="width: 100%;">Negociar</button>
+            <button [routerLink]="['/comprar/negociar', carro.id]" class="btn btn-primary d-block mt-1" style="width: 100%;">Negociar</button>
         </div>
 
     </div>

@@ -3,7 +3,7 @@
     <div class="containerNeg ">
         <form [formGroup]="negociarForm" (ngSubmit)="onSubmit()">
             <div>
-                <h1>R$ 79.500</h1>
+                <h1>{{carro.preco | currency: 'BRL'}}</h1>
             </div>
             <div class="mb-3">
                 <label for="nome" class="form-label"></label>

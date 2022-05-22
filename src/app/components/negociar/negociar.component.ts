@@ -1,14 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { Carro } from 'src/app/models/carro';
+import { CarrosService } from 'src/app/shared/services/carros/carros.service';
 
 @Component({
   selector: 'app-negociar',
   templateUrl: './negociar.component.html',
   styleUrls: ['./negociar.component.css']
 })
-export class NegociarComponent implements OnInit {
+export class NegociarComponent implements OnInit, OnDestroy {
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private rota: ActivatedRoute, private carrosService: CarrosService) { }
+
+  carro: Carro = {} as Carro;
+  id?: number;
+  private inscricao: any;
 
   negociarForm = this.fb.group({
     nome: ['', [Validators.required, Validators.minLength(4)]],
@@ -31,11 +38,22 @@ export class NegociarComponent implements OnInit {
     return this.negociarForm.get('mensagem');
   }
 
+  ngOnInit(): void {
+    this.inscricao = this.rota.params.subscribe(params => {
+
+      this.id = +params['id'];
+      this.carro = this.carrosService.getCarro(this.id);
+
+    })
+  }
+
+  ngOnDestroy(): void {
+  }
+
   onSubmit(){
     alert('Mensagem enviada!')
   }
 
-  ngOnInit(): void {
-  }
+  
 
 }

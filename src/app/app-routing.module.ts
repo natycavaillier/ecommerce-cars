@@ -12,11 +12,11 @@ import { VenderComponent } from './components/vender/vender.component';
 const routes: Routes = [
   { path:'', component: HomeComponent },
   { path: 'comprar', component: ComprarComponent },
+  { path: 'comprar/negociar/:id', component: NegociarComponent },
   { path: 'cadastro', component: CadastroComponent },
   { path: 'login', component: LoginComponent },
   { path: 'vender', component: VenderComponent },
   { path: 'feedback', component: FeedbackComponent },
-  { path: 'comprar/negociar', component: NegociarComponent },
   { path: '**', component: NaoEncontradoComponent}
 ];
 
