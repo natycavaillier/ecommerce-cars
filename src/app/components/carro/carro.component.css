@@ -1,6 +1,7 @@
 .img-carro {
     min-height: 200px;
     max-height: 200px;
+    border-radius: 10px 10px 0 0;
     object-fit: cover;
 }
 
@@ -8,6 +9,7 @@
     min-height: 32rem;
     max-height: 32rem;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .card:hover {
