@@ -1,30 +1,56 @@
-  <nav class="navbar fi navbar-expand-lg navbar-light bg-light nav-b" >
-    <div class="container-fluid nav-bar" >
-      <a class="navbar-brand" [routerLink]="'/'">
-        <img src="../../../assets/img/iconcar.png" alt=""  width="30" height="24" class="d-inline-block align-text-top p-10">
-        {{ nomeDoApp }}
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div  class="collapse navbar-collapse d-flex " style="justify-content: end">
-        <ul class="navbar-nav d-flex" >
-          <li class="nav-item active">
-            <a class="nav-link" [routerLink]="'/comprar'" >Comprar</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" [routerLink]="'/vender'">Vender</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" [routerLink]="'/cadastro'">Cadastro</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" [routerLink]="'/login'">Login</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" [routerLink]="'/feedback'">Feedback</a> 
-          </li>
-        </ul>
-      </div>
+<!-- <nav class="navbar navbar-expand-lg nav-b" style="justify-content: end">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="'/'">
+      <img src="../../../assets/img/iconcar.png" alt=""  width="30" class="d-inline-block align-text-top p-10">
+      {{ nomeDoApp }}
+    </a>
+    <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+      &#9776;
+    </button>
+
+    <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Examples</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">About</a>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg nav-b" style="justify-content: end">
+  <div class="container-fluid nav-bar">
+    <a class="navbar-brand" [routerLink]="'/'">
+      <img src="../../../assets/img/iconcar.png" alt=""  width="30" class="d-inline-block align-text-top p-10">
+      {{ nomeDoApp }}
+    </a>
+    <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed" style="color: white;">
+      &#9776;
+    </button>
+    <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse" style="justify-content: end">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" (click)="isMenuCollapsed = true" [routerLink]="'/comprar'">Comprar</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" (click)="isMenuCollapsed = true" [routerLink]="'/vender'">Vender</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" (click)="isMenuCollapsed = true" [routerLink]="'/cadastro'">Cadastro</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" (click)="isMenuCollapsed = true" [routerLink]="'/login'">Login</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" (click)="isMenuCollapsed = true" [routerLink]="'/feedback'">Feedback</a> 
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
