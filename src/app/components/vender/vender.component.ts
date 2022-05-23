@@ -69,7 +69,6 @@ export class VenderComponent implements OnInit {
     this.carro.id = this.carrosService.getCarros().length + 1;
     this.carrosService.pushCarros(this.carro);
     alert(`Anúncio do carro ${this.carro.modelo} publicado!`);
-    console.log(this.carro)
   }
 
   ngOnInit(): void {

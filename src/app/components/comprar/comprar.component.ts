@@ -16,6 +16,10 @@ export class ComprarComponent implements OnInit, OnDestroy {
 
   constructor(private carrosService: CarrosService) { }
 
+  onLimpar(){
+    this.carros = this.carrosService.getCarros();
+  }
+
   buscarModelo(modelo: string){
     this.carros = this.carrosService.getCarros();
     modelo = modelo.toUpperCase();
