@@ -3,34 +3,21 @@
         <div class="text-center mb-5">
             <h1>Cadastre seu carro</h1>
         </div>
-        <div class="mb-4 mt-4">
-            <input [(ngModel)]="carro.modelo" formControlName="modelo" type="text" class="form-control"
-                placeholder="Modelo do carro">
-            <small class="text-danger" *ngIf="modelo?.invalid && modelo?.touched">
-                <span *ngIf="modelo?.hasError('required')">O modelo é obrigatório!</span>
-                <span *ngIf="modelo?.hasError('minlength')">O minimo são 5 caracteres</span>
-            </small>
-        </div>
-        <div class="mb-4 mt-4">
-            <input [(ngModel)]="carro.imagem" formControlName="imagem" type="text" class="form-control" placeholder="Link da imagem">
-            <small class="text-danger" *ngIf="imagem?.invalid && imagem?.touched">
-                <span *ngIf="imagem?.hasError('required')">O link da imagem é obrigatório!</span>
-            </small>
-        </div>
-        <div class="mb-4 mt-4">
-            <input [(ngModel)]="carro.descricao" formControlName="descricao" type="text" class="form-control"
-                placeholder="Descrição e especificações">
-            <small class="text-danger" *ngIf="descricao?.invalid && descricao?.touched">
-                <span *ngIf="descricao?.hasError('required')">A descricao é obrigatória!</span>
-                <span *ngIf="descricao?.hasError('minlength')">O minimo são 10 caracteres</span>
-            </small>
-        </div>
-        <div class="mb-4 mt-4"> 
-            <input [(ngModel)]="carro.marca" formControlName="marca" type="text" class="form-control"
-                placeholder="Marca">
-            <small class="text-danger" *ngIf="marca?.invalid && marca?.touched">
-                <span *ngIf="marca?.hasError('required')">A marca é obrigatória!</span>
-            </small>
+        <div class="row mb-4 mt-4">
+            <div class="col" >
+                <input [(ngModel)]="carro.modelo" formControlName="modelo" type="text" class="form-control"
+                    placeholder="Modelo do carro">
+                <small class="text-danger" *ngIf="modelo?.invalid && modelo?.touched">
+                    <span *ngIf="modelo?.hasError('required')">O modelo é obrigatório!</span>
+                    <span *ngIf="modelo?.hasError('minlength')">O minimo são 5 caracteres</span>
+                </small>
+            </div>
+            <div class="col">
+                <input [(ngModel)]="carro.imagem" formControlName="imagem" type="text" class="form-control" placeholder="Link da imagem">
+                <small class="text-danger" *ngIf="imagem?.invalid && imagem?.touched">
+                    <span *ngIf="imagem?.hasError('required')">O link da imagem é obrigatório!</span>
+                </small>
+            </div>
         </div>
         <div class="row mb-4 mt-4">
             <div class="col">
@@ -60,6 +47,12 @@
                     <span *ngIf="cor?.hasError('required')">A cor é obrigatória!</span>
                 </small>
             </div>
+            <div class="col"> 
+                <input [(ngModel)]="carro.marca" formControlName="marca" type="text" class="form-control" placeholder="Marca">
+                <small class="text-danger" *ngIf="marca?.invalid && marca?.touched">
+                    <span *ngIf="marca?.hasError('required')">A marca é obrigatória!</span>
+                </small>
+            </div>
             <div class="col">
                 <input [(ngModel)]="carro.finalPlaca" formControlName="finalPlaca" type="number" class="form-control" placeholder="Final da Placa">
                 <small *ngIf="finalPlaca?.touched && finalPlaca?.invalid" class="text-danger">
@@ -67,9 +60,17 @@
                     <span *ngIf="finalPlaca?.hasError('maxlength')">Apenas um número!</span>
                 </small>
             </div>
+            <div class=" mt-4">
+                <input [(ngModel)]="carro.descricao" formControlName="descricao" type="text" class="form-control"
+                    placeholder="Descrição e especificações">
+                <small class="text-danger" *ngIf="descricao?.invalid && descricao?.touched">
+                    <span *ngIf="descricao?.hasError('required')">A descricao é obrigatória!</span>
+                    <span *ngIf="descricao?.hasError('minlength')">O minimo são 10 caracteres</span>
+                </small>
+            </div>
         </div>
-        <div class="mt-5">
-            <button class="bottonVender btn btn-primary" [disabled]="venderForm.invalid">
+        <div class="text-center">
+            <button class="button btn"  [disabled]="venderForm.invalid">
                 Publicar Anúncio
             </button>
         </div>

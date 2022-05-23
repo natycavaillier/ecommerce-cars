@@ -23,5 +23,6 @@ export enum MarcaCarro {
     MITSUBISHI = 'Mitsubishi',
     FORD = 'Ford',
     CHEVROLET = 'Chevrolet',
-    RENAULT = 'Renault'
+    RENAULT = 'Renault',
+    OUTROS = 'Outros'
 }
