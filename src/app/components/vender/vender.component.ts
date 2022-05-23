@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { Carro } from 'src/app/models/carro';
 import { CarrosService } from 'src/app/shared/services/carros/carros.service';
+import { GeolocationService } from 'src/app/shared/services/geolocation/geolocation.service';
+import { WeatherApiService, WeatherData } from 'src/app/shared/services/weather-api/weather-api.service';
 
 @Component({
   selector: 'app-vender',
@@ -9,10 +12,11 @@ import { CarrosService } from 'src/app/shared/services/carros/carros.service';
   styleUrls: ['./vender.component.css']
 })
 export class VenderComponent implements OnInit {
+  constructor(private fb: FormBuilder, private carrosService: CarrosService, private geolocationService: GeolocationService,
+    private weatherApiService: WeatherApiService) { }
 
   carro: Carro = {} as Carro;
-
-  constructor(private fb: FormBuilder, private carrosService: CarrosService) { }
+  error = false;
 
   venderForm = this.fb.group({
     modelo: ['', [Validators.required, Validators.minLength(5)]],
@@ -21,7 +25,6 @@ export class VenderComponent implements OnInit {
     preco: ['', [Validators.required, Validators.min(1000)]],
     ano: ['', [Validators.required]],
     kmRodados: ['', [Validators.required]],
-    localizacao: ['', [Validators.required]],
     cor: ['', [Validators.required]],
     finalPlaca: ['', [Validators.required, Validators.maxLength(1)]],
     marca: ['', [Validators.required]],
@@ -58,17 +61,31 @@ export class VenderComponent implements OnInit {
   get marca() {
     return this.venderForm.get('marca')
   }
+  //#endregion
 
-
-  onSubmit(){
+  onSubmit() {
     this.carro.modelo = this.carro.modelo.toUpperCase();
     this.carro.descricao = this.carro.descricao.toUpperCase();
     this.carro.id = this.carrosService.getCarros().length + 1;
     this.carrosService.pushCarros(this.carro);
     alert(`Anúncio do carro ${this.carro.modelo} publicado!`);
+    console.log(this.carro)
   }
 
   ngOnInit(): void {
+    this.geolocationService.getPosition().subscribe({
+      next: (coords) => {
+        //Cria um observable novo de clima com base nas coordenadas do serviço
+        this.weatherApiService.getWeatherData(coords).subscribe({
+          next: (localizacao) => {
+            this.carro.localizacao = localizacao;
+          }
+        })
+      },
+      error: (erro) => {
+        this.error = true;
+      }
+    });
   }
 
 }

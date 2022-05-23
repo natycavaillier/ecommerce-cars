@@ -1,3 +1,5 @@
+import { WeatherData } from "../shared/services/weather-api/weather-api.service";
+
 export interface Carro {
     id: number;
     imagem: string;
@@ -6,7 +8,7 @@ export interface Carro {
     preco: number;
     ano: string;
     kmRodados: number;
-    localizacao: string;
+    localizacao: WeatherData;
     cor: string;
     finalPlaca: number;
     marca: MarcaCarro;
