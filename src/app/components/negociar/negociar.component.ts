@@ -11,7 +11,7 @@ import { CarrosService } from 'src/app/shared/services/carros/carros.service';
 })
 export class NegociarComponent implements OnInit, OnDestroy {
 
-  constructor(private fb: FormBuilder, private rota: ActivatedRoute, private carrosService: CarrosService) { }
+  constructor(private fb: FormBuilder, private rota: ActivatedRoute, private carrosService: CarrosService, ) { }
 
   carro: Carro = {} as Carro;
   id?: number;
@@ -38,7 +38,6 @@ export class NegociarComponent implements OnInit, OnDestroy {
 
       this.id = +params['id'];
       this.carro = this.carrosService.getCarro(this.id);
-
     })
   }
 
