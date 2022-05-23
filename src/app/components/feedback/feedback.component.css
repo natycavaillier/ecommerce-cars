@@ -6,6 +6,17 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.bottonNeg {
+.btn {
     width: 100%;
+    background-color: #2155CD;
+    box-shadow: #123076 4px 4px 0px;
+    border-radius: 8px;
+    transition: transform 200ms, box-shadow 200ms;
+    color: #fff;
+    text-align: center;
+}
+
+.btn:hover {
+    transform: translateY(4px) translateX(4px);
+    box-shadow: #123076 0px 0px 0px;
 }
