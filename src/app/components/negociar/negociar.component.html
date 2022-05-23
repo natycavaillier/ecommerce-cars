@@ -1,5 +1,5 @@
 <div class="container-xxl ">
-    <div class="container-fluit">
+    <div class="container-float">
         <img class="img" [src]="carro.imagem" alt="" class="container containerImage" style="position: absolute;">
     </div>
     <div class="d-flex bd-highlight container img" style="position: absolute; width: 100%;">
@@ -9,56 +9,47 @@
             </div>
             <div class="row justify-content-between">
                 <div class="col-sm">
-                    <b>Cidade</b>
-                    <p>{{carro.localizacao}}</p>
+                    <strong>Cidade</strong>
+                    <p>{{carro.localizacao.name}}</p>
                 </div>
                 <div class="col-sm">
-                    <b>Ano</b>
+                    <strong>Ano</strong>
                     <p>{{carro.ano}}</p>
                 </div>
                 <div class="col-sm">
-                    <b>Quilometragem</b>
+                    <strong>Quilometragem</strong>
                     <p>{{carro.kmRodados}} Km</p>
                 </div>
             </div>
             <div class="row mt-4">
                 <div class="col-sm">
-                    <b>Descrição</b>
+                    <strong>Descrição</strong>
                     <p>{{carro.descricao}}</p>
                 </div>
                 <div class="col-sm">
-                    <b>Cor</b>
+                    <strong>Cor</strong>
                     <p>{{carro.cor}}</p>
                 </div>
                 <div class="col-sm">
-                    <b>Final da Placa</b>
+                    <strong>Final da Placa</strong>
                     <p>{{carro.finalPlaca}}</p>
                 </div>
             </div>
             <div class="row mt-4">
                 <div class="col-sm">
-                    <b>Marca</b>
+                    <strong>Marca</strong>
                     <p>{{carro.marca}}</p>
                 </div>
             </div>
         </div>
-        <div class=" flex-shrink-1 bd-highlight containerForm ">
+        <div class="d-flex flex-shrink-1 bd-highlight containerForm ">
             <div class="containerNeg ">
-                <form [formGroup]="negociarForm" (ngSubmit)="onSubmit()">
-                    <div>
-                        <h1>{{carro.preco | currency: 'BRL'}}</h1>
-                    </div>
-                    <div class="mb-3">
-                        <label for="nome" class="form-label"></label>
-                        <input formControlName="nome" type="text" class="form-control" placeholder="Nome">
-                        <small class="text-danger" *ngIf="nome?.invalid && nome?.touched">
-                            <span *ngIf="nome?.hasError('required')">O nome é obrigatorio!</span>
-                            <span *ngIf="nome?.hasError('minlength')">O minimo é 4 caracteres</span>
-                        </small>
-                    </div>
-                    <div class="mb-3">
+                <h1>{{carro.preco | currency: 'BRL'}}</h1>
+                <form [formGroup]="negociarForm" class="formNegociar" (ngSubmit)="onSubmit()">
+                    <div class="mb-3 mt-4">
                         <label for="email" class="form-label"></label>
-                        <input formControlName="email" type="email" class="form-control" placeholder="E-mail">
+                        <input [(ngModel)]="loginEmail" formControlName="email" type="email" class="form-control"
+                            placeholder="E-mail">
                         <small class="text-danger" *ngIf="email?.invalid && email?.touched">
                             <span *ngIf="email?.hasError('required')">O email é obrigatorio</span>
                             <span *ngIf="email?.hasError('email')">O email é inválido</span>
@@ -66,31 +57,16 @@
                     </div>
                     <div class="mb-3">
                         <label for="senha" class="form-label"></label>
-                        <input formControlName="senha" type="password" class="form-control" placeholder="Senha">
+                        <input [(ngModel)]="loginSenha" formControlName="senha" type="password" class="form-control"
+                            placeholder="Senha">
                         <small class="text-danger" *ngIf="senha?.invalid && senha?.touched">
                             <span *ngIf="senha?.hasError('required')">A senha é inválida</span>
                             <span *ngIf="senha?.hasError('minlength')">minimo de caracteres é 5</span>
                         </small>
                     </div>
-                    <!-- <div class="mb-3">
-                        <label for="" class="form-label"></label>
-                        <input formControlName="telefone" type="number" class="form-control" placeholder="Telefone">
-                        <small class="text-danger" *ngIf="telefone?.invalid && telefone?.touched">
-                            <span *ngIf="telefone?.hasError('required')">Telefone inválido</span>
-                        </small>
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Mensagem</label>
-                        <textarea formControlName="mensagem" class="form-control" id="#" rows="3"
-                            placeholder="Olá, tenho interesse no veiculo."></textarea>
-                        <small class="text-danger" *ngIf="mensagem?.invalid && mensagem?.touched">
-                            <span *ngIf="mensagem?.hasError('required')">A mensagem é obrigatoria</span>
-                            <span *ngIf="mensagem?.hasError('minlength')">O minimo é 5 caracteres</span>
-                            <span *ngIf="mensagem?.hasError('maxlength')">O maximo é 100 caracteres</span>
-                        </small>
-                    </div> -->
                     <div>
-                        <button class=" bottonNeg btn btn-primary" [routerLink]="['/comprar/negociar', carro.id, 'interesse']">
+                        <!-- [routerLink]= "['/comprar/negociar', carro.id, 'interesse']" -->
+                        <button class="buttonNeg btn">
                             Tenho interesse!
                         </button>
                     </div>
@@ -98,3 +74,4 @@
             </div>
         </div>
     </div>
+</div>
