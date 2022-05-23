@@ -4,19 +4,18 @@
       <h1>Faça o seu Login</h1>
     </div> 
     <div class="mb-4 mt-4">
-      <input formControlName="email" type="email" class="form-control" id="inputEmail4" placeholder="Email">
+      <input [(ngModel)]="loginEmail" formControlName="email" type="email" class="form-control" id="inputEmail4" placeholder="Email">
       <small class="text-danger" *ngIf="email?.touched && email?.invalid">
         <span *ngIf="email?.hasError('required')">Campo obrigatório</span>
-        <span *ngIf="email?.hasError('minLength')">Email inválido</span>
-        <span *ngIf="email?.hasError('seuCadastro')">Não permitido</span>
+        <span *ngIf="email?.hasError('minlength')">Email inválido</span>
     </small>
     </div>
 
     <div class="mb-4 mt-4">
-      <input formControlName="senha" type="password" class="form-control" id="inputPassword4" placeholder="Senha">
+      <input [(ngModel)]="loginSenha" formControlName="senha" type="password" class="form-control" id="inputPassword4" placeholder="Senha">
       <small class="text-danger" *ngIf="senha?.touched && senha?.invalid">
         <span *ngIf="senha?.hasError('required')">Campo obrigatório</span>
-        <span *ngIf="senha?.hasError('minLength')">senha inválida</span>
+        <span *ngIf="senha?.hasError('minlength')">Mínimo 5 caracteres</span>
       </small>
     </div>
 

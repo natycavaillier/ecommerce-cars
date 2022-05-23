@@ -17,7 +17,7 @@ export class CarrosService {
       kmRodados: 51300,
       localizacao: {
         sys: {
-          country: 'Brasil'
+          country: 'BR'
         },
         name: 'Barueri'
       },
@@ -35,7 +35,7 @@ export class CarrosService {
       kmRodados: 13664,
       localizacao: {
         sys: {
-          country: 'Brasil'
+          country: 'BR'
         },
         name: 'Barueri'
       },
@@ -53,7 +53,7 @@ export class CarrosService {
       kmRodados: 46072,
       localizacao: {
         sys: {
-          country: 'Brasil'
+          country: 'BR'
         },
         name: 'Barueri'
       },
@@ -71,7 +71,7 @@ export class CarrosService {
       kmRodados: 41900,
       localizacao: {
         sys: {
-          country: 'Brasil'
+          country: 'BR'
         },
         name: 'Barueri'
       },
@@ -89,7 +89,7 @@ export class CarrosService {
       kmRodados: 33372,
       localizacao: {
         sys: {
-          country: 'Brasil'
+          country: 'BR'
         },
         name: 'Barueri'
       },
@@ -107,7 +107,7 @@ export class CarrosService {
       kmRodados: 42800,
       localizacao: {
         sys: {
-          country: 'Brasil'
+          country: 'BR'
         },
         name: 'Barueri'
       },
@@ -118,14 +118,14 @@ export class CarrosService {
     {
       id: 7,
       imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDVSySJBRUJ1utuUmRVbffg0gNjKG5Uwx1Pg&usqp=CAU',
-      modelo: 'Honda Civic Type-R 2022',
-      descricao: '2.0L turbo, 320 cv a 6500 rpm, 40,8 kgfm a 4500 rpm',
+      modelo: 'HONDA CIVIC TYPE-R 2022',
+      descricao: '2.0L TURBO, 320 CV C 6500 RPM, 40,8 KGFM A 4500 RPM',
       preco: 184900,
       ano: '2022/2022',
       kmRodados: 300,
       localizacao: {
         sys: {
-          country: 'Brasil'
+          country: 'BR'
         },
         name: 'Barueri'
       },
