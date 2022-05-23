@@ -15,13 +15,14 @@ export interface Carro {
 }
 
 export enum MarcaCarro {
-    VOLKSWAGEN = 'volkswagen',
-    HONDA = 'honda',
-    FIAT = 'fiat',
-    TOYOTA = 'toyota',
-    HYUNDAI = 'hyundai',
-    MITSUBISHI = 'mitsubishi',
-    FORD = 'ford',
-    CHEVROLET = 'chevrolet',
-    RENAULT = 'renault'
+    VOLKSWAGEN = 'Volkswagen',
+    HONDA = 'Honda',
+    FIAT = 'Fiat',
+    TOYOTA = 'Toyota',
+    HYUNDAI = 'Hyundai',
+    MITSUBISHI = 'Mitsubishi',
+    FORD = 'Ford',
+    CHEVROLET = 'Chevrolet',
+    RENAULT = 'Renault',
+    OUTROS = 'Outros'
 }

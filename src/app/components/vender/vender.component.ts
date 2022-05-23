@@ -7,7 +7,7 @@ import { GeolocationService } from 'src/app/shared/services/geolocation/geolocat
 import { WeatherApiService, WeatherData } from 'src/app/shared/services/weather-api/weather-api.service';
 
 @Component({
-  selector: 'app-vender',
+  selector: 'app-vender', 
   templateUrl: './vender.component.html',
   styleUrls: ['./vender.component.css']
 })
@@ -27,7 +27,7 @@ export class VenderComponent implements OnInit {
     kmRodados: ['', [Validators.required]],
     cor: ['', [Validators.required]],
     finalPlaca: ['', [Validators.required, Validators.maxLength(1)]],
-    marca: ['', [Validators.required]],
+    marca: ['',],
   })
 
   //#region Getters
@@ -69,7 +69,6 @@ export class VenderComponent implements OnInit {
     this.carro.id = this.carrosService.getCarros().length + 1;
     this.carrosService.pushCarros(this.carro);
     alert(`Anúncio do carro ${this.carro.modelo} publicado!`);
-    console.log(this.carro)
   }
 
   ngOnInit(): void {

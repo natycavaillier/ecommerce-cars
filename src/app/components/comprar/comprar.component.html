@@ -2,49 +2,62 @@
     <div class="row">
         <div class="col-sm-3 mt-5 mb-5" style="border-right: 1px solid #bab5b5;">
             <div class="container">
+                <div class="mb-4 d-flex justify-content-between">
+                    <div>
+                        <span><h6>Filtro</h6></span>
+                    </div>
+                    <button class="btn btn-outline buttonLimpar" (click)="onLimpar()" type="button">Limpar X</button>
+                </div>
                 <div class="row">
-                    <h6>Filtro por modelo</h6>
+                    <h6>Modelo</h6>
                     <form class="d-flex" role="search">
-                        <input [(ngModel)]="inputModelo" name="inputModelo" class="form-control me-2" type="search" placeholder="Modelo"
-                            aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit" (click)="buscarModelo(inputModelo)">Buscar</button>
+                        <input [(ngModel)]="inputModelo" name="inputModelo" class="form-control me-2" type="search"
+                            placeholder="Modelo" aria-label="Search">
+                        <button class="btn btn-outline buttonBuscar" type="submit"
+                            (click)="buscarModelo(inputModelo)">Buscar</button>
                     </form>
                 </div>
                 <div class="row my-4 d-flex justify-content-center">
-                    <h6>Filtro por marca</h6>
+                    <h6>Marca</h6>
                     <div class="col-sm-4 d-flex justify-content-center div-marca m-1">
-                        <img class="img-comprar" src="../../../assets/img/img-volkswagen.png" (click)="onMarca('volkswagen')" alt="">
+                        <img class="img-comprar" src="../../../assets/img/img-volkswagen.png"
+                            (click)="onMarca('Volkswagen')" alt="">
                     </div>
                     <div class="col-sm-4 d-flex justify-content-center div-marca m-1">
-                        <img class="img-comprar" src="../../../assets/img/img-honda.png" (click)="onMarca('honda')" alt="">
+                        <img class="img-comprar" src="../../../assets/img/img-honda.png" (click)="onMarca('Honda')"
+                            alt="">
                     </div>
                     <div class="col-sm-4 d-flex justify-content-center div-marca m-1">
-                        <img class="img-comprar" src="../../../assets/img/img-fiat.png" (click)="onMarca('fiat')" alt="">
+                        <img class="img-comprar" src="../../../assets/img/img-fiat.png" (click)="onMarca('Fiat')"
+                            alt="">
                     </div>
                     <div class="col-sm-4 d-flex justify-content-center div-marca m-1">
-                        <img class="img-comprar" src="../../../assets/img/img-toyota.png" (click)="onMarca('toyota')" alt="">
+                        <img class="img-comprar" src="../../../assets/img/img-toyota.png" (click)="onMarca('Toyota')"
+                            alt="">
                     </div>
                     <div class="col-sm-4 d-flex justify-content-center div-marca m-1">
-                        <img class="img-comprar" src="../../../assets/img/img-hyundai.png" (click)="onMarca('hyundai')" alt="">
+                        <img class="img-comprar" src="../../../assets/img/img-hyundai.png" (click)="onMarca('Hyundai')"
+                            alt="">
                     </div>
                     <div class="col-sm-4 d-flex justify-content-center div-marca m-1">
-                        <img class="img-comprar" src="../../../assets/img/img-mitsubishi.png" (click)="onMarca('mitsubishi')" alt="">
+                        <img class="img-comprar" src="../../../assets/img/img-mitsubishi.png"
+                            (click)="onMarca('Mitsubishi')" alt="">
                     </div>
                     <div class="col-sm-4 d-flex justify-content-center div-marca m-1">
-                        <img class="img-comprar" src="../../../assets/img/img-ford.png" (click)="onMarca('ford')" alt="">
+                        <img class="img-comprar" src="../../../assets/img/img-ford.png" (click)="onMarca('Ford')"
+                            alt="">
                     </div>
                     <div class="col-sm-4 d-flex justify-content-center div-marca m-1">
-                        <img class="img-comprar" src="../../../assets/img/img-chevrolet.png" (click)="onMarca('chevrolet')" alt="">
+                        <img class="img-comprar" src="../../../assets/img/img-chevrolet.png"
+                            (click)="onMarca('Chevrolet')" alt="">
                     </div>
                     <div class="col-sm-4 d-flex justify-content-center div-marca m-1">
-                        <img class="img-comprar" src="../../../assets/img/img-renault.png" (click)="onMarca('renault')" alt="">
+                        <img class="img-comprar" src="../../../assets/img/img-renault.png" (click)="onMarca('Renault')"
+                            alt="">
                     </div>
-                </div>
-                <div class="row my-4">
                 </div>
             </div>
         </div>
-
         <div class="col-sm-9">
             <div class="mt-5">
                 <div class="container">
