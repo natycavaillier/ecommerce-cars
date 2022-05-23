@@ -42,8 +42,8 @@ export class CarrosService {
       ano: '2017/2017',
       kmRodados: 46072,
       localizacao: 'São Paulo, SP',
-      cor: 'Prata',
-      finalPlaca: 9,
+      cor: 'Branco',
+      finalPlaca: 3,
       marca: MarcaCarro.HONDA
     },
     {

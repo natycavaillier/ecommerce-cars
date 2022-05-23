@@ -1,15 +1,10 @@
 .containerImage {
-    max-height: 45vh;
-    height: 45vh;
-}
-.img {
     max-height: 60vh;
     height: 100%;
-    max-width: 100%;
-    width: 100%;
     object-fit: cover;
-    border-radius: 1px;
-
+}
+.img {
+    margin-top: 50vh;
 }
 .containerForm {
     justify-content: end;
@@ -24,6 +19,8 @@
     border-radius: 10px;
     border-color: #bab5b5;
     background-color: #fff;
+    max-height: 500px;
+    height: 100%;
 }
 
 .bottonNeg {
@@ -42,7 +39,11 @@
 .containerInfo {
     padding: 25px;
     margin-top: 2vh;
-
+    background-color: #fff;
+    border-radius: 10px;
+    border-color: #bab5b5;
+    margin-right: 8vh;
+    border: 1px solid #bab5b5;
 }
 
 

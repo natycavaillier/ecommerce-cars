@@ -20,8 +20,9 @@ export class NegociarComponent implements OnInit, OnDestroy {
   negociarForm = this.fb.group({
     nome: ['', [Validators.required, Validators.minLength(4)]],
     email: ['', [Validators.required, Validators.email]],
-    telefone: ['', [Validators.required]],
-    mensagem: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(100)]]
+    senha: ['', [Validators.required, Validators.minLength(5)]],
+    // telefone: ['', [Validators.required]],
+    // mensagem: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(100)]]
 
   })
 
@@ -31,12 +32,15 @@ export class NegociarComponent implements OnInit, OnDestroy {
   get email() {
     return this.negociarForm.get('email');
   }
-  get telefone() {
-    return this.negociarForm.get('telefone');
-  }
-  get mensagem() {
-    return this.negociarForm.get('mensagem');
-  }
+  get senha() {
+    return this.negociarForm.get('senha');
+}
+  // get telefone() {
+  //   return this.negociarForm.get('telefone');
+  // }
+  // get mensagem() {
+  //   return this.negociarForm.get('mensagem');
+  // }
 
   ngOnInit(): void {
     this.inscricao = this.rota.params.subscribe(params => {
@@ -52,7 +56,7 @@ export class NegociarComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(){
-    alert('Mensagem enviada!')
+    
   }
 
   

@@ -1,7 +1,7 @@
 .imgCar {
     width: 100%;
     min-height: 600px;
-    max-height: 600px;
+    max-height: 850px;
     object-fit: cover;
     border-radius: 2px;
 }
