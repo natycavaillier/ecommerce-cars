@@ -2,8 +2,8 @@
     <div class="container-fluit">
         <img class="img" [src]="carro.imagem" alt="" class="container containerImage" style="position: absolute;">
     </div>
-    <div class="d-flex bd-highlight container img"  style="position: absolute; width: 100%;">
-        <div class="p-10 w-100 bd-highlight containerInfo" >
+    <div class="d-flex bd-highlight container img" style="position: absolute; width: 100%;">
+        <div class="p-10 w-100 bd-highlight containerInfo">
             <div class="d-flex justify-content-start">
                 <h2>{{carro.modelo}}</h2>
             </div>
@@ -44,11 +44,11 @@
         </div>
         <div class=" flex-shrink-1 bd-highlight containerForm ">
             <div class="containerNeg ">
-                <form   [formGroup]="negociarForm" (ngSubmit)="onSubmit()">
-                    <div >
-                        <h1 >{{carro.preco | currency: 'BRL'}}</h1>
+                <form [formGroup]="negociarForm" (ngSubmit)="onSubmit()">
+                    <div>
+                        <h1>{{carro.preco | currency: 'BRL'}}</h1>
                     </div>
-                     <div class="mb-3">
+                    <div class="mb-3">
                         <label for="nome" class="form-label"></label>
                         <input formControlName="nome" type="text" class="form-control" placeholder="Nome">
                         <small class="text-danger" *ngIf="nome?.invalid && nome?.touched">
@@ -89,9 +89,9 @@
                             <span *ngIf="mensagem?.hasError('maxlength')">O maximo é 100 caracteres</span>
                         </small>
                     </div> -->
-                    <div > 
-                        <button class=" bottonNeg btn btn-primary" [routerLink]="'/login'">
-                            Tenho interesse
+                    <div>
+                        <button class=" bottonNeg btn btn-primary" [routerLink]="['/comprar/negociar', carro.id, 'interesse']">
+                            Tenho interesse!
                         </button>
                     </div>
                 </form>

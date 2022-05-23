@@ -21,9 +21,6 @@ export class NegociarComponent implements OnInit, OnDestroy {
     nome: ['', [Validators.required, Validators.minLength(4)]],
     email: ['', [Validators.required, Validators.email]],
     senha: ['', [Validators.required, Validators.minLength(5)]],
-    // telefone: ['', [Validators.required]],
-    // mensagem: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(100)]]
-
   })
 
   get nome() {
@@ -35,12 +32,6 @@ export class NegociarComponent implements OnInit, OnDestroy {
   get senha() {
     return this.negociarForm.get('senha');
 }
-  // get telefone() {
-  //   return this.negociarForm.get('telefone');
-  // }
-  // get mensagem() {
-  //   return this.negociarForm.get('mensagem');
-  // }
 
   ngOnInit(): void {
     this.inscricao = this.rota.params.subscribe(params => {

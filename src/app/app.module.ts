@@ -17,6 +17,7 @@ import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
 import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NaoEncontradoComponent } from './components/nao-encontrador/nao-encontrado/nao-encontrado.component';
+import { TenhoInteresseComponent } from './components/tenho-interesse/tenho-interesse.component';
 
 registerLocaleData(ptBr);
 
@@ -32,7 +33,8 @@ registerLocaleData(ptBr);
     FeedbackComponent,
     NegociarComponent,
     CarroComponent,
-    NaoEncontradoComponent
+    NaoEncontradoComponent,
+    TenhoInteresseComponent
   ],
   imports: [
     BrowserModule,

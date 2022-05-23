@@ -7,12 +7,14 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { NaoEncontradoComponent } from './components/nao-encontrador/nao-encontrado/nao-encontrado.component';
 import { NegociarComponent } from './components/negociar/negociar.component';
+import { TenhoInteresseComponent } from './components/tenho-interesse/tenho-interesse.component';
 import { VenderComponent } from './components/vender/vender.component';
 
 const routes: Routes = [
   { path:'', component: HomeComponent },
   { path: 'comprar', component: ComprarComponent },
   { path: 'comprar/negociar/:id', component: NegociarComponent },
+  { path: 'comprar/negociar/:id/interesse', component: TenhoInteresseComponent },
   { path: 'cadastro', component: CadastroComponent },
   { path: 'login', component: LoginComponent },
   { path: 'vender', component: VenderComponent },
