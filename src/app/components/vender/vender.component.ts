@@ -7,7 +7,7 @@ import { GeolocationService } from 'src/app/shared/services/geolocation/geolocat
 import { WeatherApiService, WeatherData } from 'src/app/shared/services/weather-api/weather-api.service';
 
 @Component({
-  selector: 'app-vender',
+  selector: 'app-vender', 
   templateUrl: './vender.component.html',
   styleUrls: ['./vender.component.css']
 })
@@ -27,7 +27,7 @@ export class VenderComponent implements OnInit {
     kmRodados: ['', [Validators.required]],
     cor: ['', [Validators.required]],
     finalPlaca: ['', [Validators.required, Validators.maxLength(1)]],
-    marca: ['', [Validators.required]],
+    marca: ['',],
   })
 
   //#region Getters
