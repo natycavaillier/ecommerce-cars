@@ -1,13 +1,13 @@
-<div class="container-xxl h-100">
-    <div class="containerImage">
-        <img class="img" [src]="carro.imagem" alt="">
+<div class="container-xxl ">
+    <div class="container-fluit">
+        <img class="img" [src]="carro.imagem" alt="" class="container containerImage" style="position: absolute;">
     </div>
-    <div class="d-flex bd-highlight" >
-        <div class="p-2 w-100 bd-highlight containerInfo" >
+    <div class="d-flex bd-highlight container img"  style="position: absolute; width: 100%;">
+        <div class="p-10 w-100 bd-highlight containerInfo" >
             <div class="d-flex justify-content-start">
                 <h2>{{carro.modelo}}</h2>
             </div>
-            <div class="row">
+            <div class="row justify-content-between">
                 <div class="col-sm">
                     <b>Cidade</b>
                     <p>{{carro.localizacao}}</p>
@@ -42,13 +42,13 @@
                 </div>
             </div>
         </div>
-        <div class="p-2 flex-shrink-1 bd-highlight containerForm">
-            <div class="containerNeg">
-                <form [formGroup]="negociarForm" (ngSubmit)="onSubmit()">
-                    <div>
-                        <h1>{{carro.preco | currency: 'BRL'}}</h1>
+        <div class=" flex-shrink-1 bd-highlight containerForm ">
+            <div class="containerNeg ">
+                <form   [formGroup]="negociarForm" (ngSubmit)="onSubmit()">
+                    <div >
+                        <h1 >{{carro.preco | currency: 'BRL'}}</h1>
                     </div>
-                    <div class="mb-3">
+                     <div class="mb-3">
                         <label for="nome" class="form-label"></label>
                         <input formControlName="nome" type="text" class="form-control" placeholder="Nome">
                         <small class="text-danger" *ngIf="nome?.invalid && nome?.touched">
@@ -65,6 +65,14 @@
                         </small>
                     </div>
                     <div class="mb-3">
+                        <label for="senha" class="form-label"></label>
+                        <input formControlName="senha" type="password" class="form-control" placeholder="Senha">
+                        <small class="text-danger" *ngIf="senha?.invalid && senha?.touched">
+                            <span *ngIf="senha?.hasError('required')">A senha é inválida</span>
+                            <span *ngIf="senha?.hasError('minlength')">minimo de caracteres é 5</span>
+                        </small>
+                    </div>
+                    <!-- <div class="mb-3">
                         <label for="" class="form-label"></label>
                         <input formControlName="telefone" type="number" class="form-control" placeholder="Telefone">
                         <small class="text-danger" *ngIf="telefone?.invalid && telefone?.touched">
@@ -80,10 +88,10 @@
                             <span *ngIf="mensagem?.hasError('minlength')">O minimo é 5 caracteres</span>
                             <span *ngIf="mensagem?.hasError('maxlength')">O maximo é 100 caracteres</span>
                         </small>
-                    </div>
-                    <div>
-                        <button class=" bottonNeg btn btn-primary" [disabled]="negociarForm.invalid">
-                            Enviar mensagem
+                    </div> -->
+                    <div > 
+                        <button class=" bottonNeg btn btn-primary" [routerLink]="'/login'">
+                            Tenho interesse
                         </button>
                     </div>
                 </form>
