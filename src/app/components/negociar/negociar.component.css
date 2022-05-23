@@ -23,17 +23,18 @@
     height: 100%;
 }
 
-.bottonNeg {
+.buttonNeg {
     width: 100%;
-    background-color: #1197cc;
-    box-shadow: #094c66 4px 4px 0px;
+    background-color: #2155CD;
+    box-shadow: #123076 4px 4px 0px;
     border-radius: 8px;
+    color: #fff;
     transition: transform 200ms, box-shadow 200ms;
 }
 
-.bottonNeg:hover {
+.buttonNeg:hover {
     transform: translateY(4px) translateX(4px);
-    box-shadow: #094c66 0px 0px 0px;
+    box-shadow: #123076 0px 0px 0px;
 }
 
 .containerInfo {
