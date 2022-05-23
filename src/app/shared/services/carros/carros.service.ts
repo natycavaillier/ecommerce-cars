@@ -129,10 +129,156 @@ export class CarrosService {
         },
         name: 'Barueri'
       },
-      cor: 'Beje',
+      cor: 'Bege',
       finalPlaca: 9,
       marca: MarcaCarro.HONDA
-    }
+    },
+    {
+      id: 8,
+      imagem: 'https://cdn.revendamais.com.br/FC/3733/3423753_2_W_8d20187e72.jpg',
+      modelo: 'VOLKSWAGEN AMAROK 2022',
+      descricao: '2.0 HIGHLINE 4X4 CD 16V TURBO INTERCOOLER DIESEL 4P AUTOMÁTICO',
+      preco: 348900,
+      ano: '2021/2022',
+      kmRodados: 0,
+      localizacao: {
+        sys: {
+          country: 'Brasil'
+        },
+        name: 'São Bernardo do Campo, SP'
+      },
+      cor: 'Cinza',
+      finalPlaca: 9,
+      marca: MarcaCarro.VOLKSWAGEN
+    },
+    {
+    id: 9,
+      imagem: 'https://s2.glbimg.com/AS0jGJNFUc6-IOq-CyRlAUEOcnk=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_cf9d035bf26b4646b105bd958f32089d/internal_photos/bs/2022/K/C/vC6yQdTDAXA4Be2lhI4A/ccac3f88-57ca-4b75-9527-720fa7aa1df0-medium.png',
+      modelo: 'VOLKSWAGEN AMAROK 2022',
+      descricao: '2.0 HIGHLINE 4X4 CD 16V TURBO INTERCOOLER DIESEL 4P AUTOMÁTICO',
+      preco: 348900,
+      ano: '2021/2022',
+      kmRodados: 0,
+      localizacao: {
+        sys: {
+          country: 'Brasil'
+        },
+        name: 'São Bernardo do Campo, SP'
+      },
+      cor: 'Preto',
+      finalPlaca: 9,
+      marca: MarcaCarro.VOLKSWAGEN
+    },
+    {
+      id: 10,
+        imagem: 'https://img2.icarros.com/dbimg/imgnoticia/4/22349_1',
+        modelo: 'VOLKSWAGEN AMAROK 2022',
+        descricao: '2.0 HIGHLINE 4X4 CD 16V TURBO INTERCOOLER DIESEL 4P AUTOMÁTICO',
+        preco: 348900,
+        ano: '2021/2022',
+        kmRodados: 0,
+        localizacao: {
+          sys: {
+            country: 'Brasil'
+          },
+          name: 'São Bernardo do Campo, SP'
+        },
+        cor: 'Azul',
+        finalPlaca: 9,
+        marca: MarcaCarro.VOLKSWAGEN
+      },
+      {
+        id: 11,
+          imagem: 'https://carros2021.com.br/wp-content/uploads/2021/09/traseira-volkswagen-t-cross.jpg',
+          modelo: 'VOLKSWAGEN NIVUS 2022',
+          descricao: '2.0 HIGHLINE 4X4 CD 16V TURBO INTERCOOLER DIESEL 4P AUTOMÁTICO',
+          preco: 148900,
+          ano: '2021/2022',
+          kmRodados: 0,
+          localizacao: {
+            sys: {
+              country: 'Brasil'
+            },
+            name: 'Santos, SP'
+          },
+          cor: 'Orange',
+          finalPlaca: 9,
+          marca: MarcaCarro.VOLKSWAGEN
+        },
+        {
+          id: 12,
+            imagem: 'https://cdn.motor1.com/images/mgl/Ok3MB/s4/volkswagen-voyage-2022.jpg',
+            modelo: 'VOLKSWAGEN VOYAGE 2021',
+            descricao: '1.6 MSI TOTALFLEX 4P MANUAL',
+            preco: 148900,
+            ano: '2021/2022',
+            kmRodados: 0,
+            localizacao: {
+              sys: {
+                country: 'Brasil'
+              },
+              name: 'Santos, SP'
+            },
+            cor: 'Cinza',
+            finalPlaca: 9,
+            marca: MarcaCarro.VOLKSWAGEN
+          },
+          {
+            id: 13,
+              imagem: 'https://fotos.jornaldocarro.estadao.com.br/uploads/2018/10/30114616/41757831-1160x773.jpg',
+              modelo: 'VOLKSWAGEN VOYAGE 2022',
+              descricao: '1.6 MSI TOTALFLEX 4P MANUAL',
+              preco: 89390,
+              ano: '2022/2022',
+              kmRodados: 0,
+              localizacao: {
+                sys: {
+                  country: 'Brasil'
+                },
+                name: 'Contagem, MG'
+              },
+              cor: 'Vermelho',
+              finalPlaca: 9,
+              marca: MarcaCarro.VOLKSWAGEN
+            },
+            {
+              id: 14,
+                imagem: 'https://photo-b2b-autoaction.storage.googleapis.com/autoaction_prod/9f184e30-775d-7f98-96c0-ed951d2591ab-04jpg.jpg',
+                modelo: 'Honda Civic 2021',
+                descricao: '2.0 HIGHLINE 4X4 CD 16V TURBO INTERCOOLER DIESEL 4P AUTOMÁTICO',
+                preco: 148900,
+                ano: '2021/2022',
+                kmRodados: 0,
+                localizacao: {
+                  sys: {
+                    country: 'Brasil'
+                  },
+                  name: 'Santos, SP'
+                },
+                cor: 'Orange',
+                finalPlaca: 9,
+                marca: MarcaCarro.VOLKSWAGEN
+              },
+              {
+                id: 15,
+                  imagem: 'https://www.automaistv.com.br/wp-content/uploads/2019/11/honda_city_63.jpg',
+                  modelo: 'HONDA CITY 2021',
+                  descricao: '2.0 HIGHLINE 4X4 CD 16V TURBO INTERCOOLER DIESEL 4P AUTOMÁTICO',
+                  preco: 148900,
+                  ano: '2021/2022',
+                  kmRodados: 0,
+                  localizacao: {
+                    sys: {
+                      country: 'Brasil'
+                    },
+                    name: 'Santos, SP'
+                  },
+                  cor: 'Azul',
+                  finalPlaca: 9,
+                  marca: MarcaCarro.VOLKSWAGEN
+                }
+                
+      
   ];
 
   pushCarros(carro: Carro) {
