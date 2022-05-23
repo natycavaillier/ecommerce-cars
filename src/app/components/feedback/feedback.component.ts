@@ -1,11 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
- 
-  FormBuilder,
-  Validators
-
-} from '@angular/forms';
-
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-feedback',
@@ -18,11 +12,8 @@ export class FeedbackComponent implements OnInit {
 
   feedbackForm = this.fb.group({
     nome: ['', [Validators.required, Validators.minLength(2)]],
-    email: ['', [Validators.required, Validators.email,]],
-    feedback: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(150)]],
-    comentario:['', [Validators.required]],
-    erro:['',[Validators.required]],
-    questionamento:['', [Validators.required]]
+    email: ['', [Validators.required, Validators.email]],
+    feedback: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(150)]]
   });
 
   get nome() {
@@ -37,19 +28,8 @@ export class FeedbackComponent implements OnInit {
     return this.feedbackForm.get('feedback');
   }
 
-  get comentario() {
-    return this.feedbackForm.get('comentario');
-  }
-
-  get erro() {
-    return this.feedbackForm.get('erro');
-  }
-
-  get questionamento() {
-    return this.feedbackForm.get('questionamento');
-  }
-
   onSubmit() {
+    this.feedbackForm.reset();
     alert('Obrigado por seu feedback!');
     
   }

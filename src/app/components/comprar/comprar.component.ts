@@ -16,14 +16,6 @@ export class ComprarComponent implements OnInit, OnDestroy {
 
   constructor(private carrosService: CarrosService) { }
 
-  // getMarca(marca: string) {
-  //   return this.carros.filter((carro): any => {
-  //     if(carro.marca == marca){
-  //       return carro.marca;
-  //     }
-  //   });
-  // }
-
   buscarModelo(modelo: string){
     this.carros = this.carrosService.getCarros();
     modelo = modelo.toUpperCase();

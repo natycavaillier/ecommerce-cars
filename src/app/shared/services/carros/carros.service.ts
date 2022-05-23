@@ -15,7 +15,12 @@ export class CarrosService {
       preco: 134990,
       ano: '2018/2019',
       kmRodados: 51300,
-      localizacao: 'Ribeirão Preto, SP',
+      localizacao: {
+        sys: {
+          country: 'BR'
+        },
+        name: 'Barueri'
+      },
       cor: 'Preto',
       finalPlaca: 2,
       marca: MarcaCarro.HONDA
@@ -28,7 +33,12 @@ export class CarrosService {
       preco: 149990,
       ano: '2020/2020',
       kmRodados: 13664,
-      localizacao: 'Salvador, BA',
+      localizacao: {
+        sys: {
+          country: 'BR'
+        },
+        name: 'Barueri'
+      },
       cor: 'Prata',
       finalPlaca: 9,
       marca: MarcaCarro.TOYOTA
@@ -41,9 +51,14 @@ export class CarrosService {
       preco: 75500,
       ano: '2017/2017',
       kmRodados: 46072,
-      localizacao: 'São Paulo, SP',
-      cor: 'Branco',
-      finalPlaca: 3,
+      localizacao: {
+        sys: {
+          country: 'BR'
+        },
+        name: 'Barueri'
+      },
+      cor: 'Prata',
+      finalPlaca: 9,
       marca: MarcaCarro.HONDA
     },
     {
@@ -54,7 +69,12 @@ export class CarrosService {
       preco: 97990,
       ano: '2019/2020',
       kmRodados: 41900,
-      localizacao: 'Barueri, SP',
+      localizacao: {
+        sys: {
+          country: 'BR'
+        },
+        name: 'Barueri'
+      },
       cor: 'Prata',
       finalPlaca: 9,
       marca: MarcaCarro.HONDA
@@ -67,7 +87,12 @@ export class CarrosService {
       preco: 45990,
       ano: '2019/2020',
       kmRodados: 33372,
-      localizacao: 'São Paulo, SP',
+      localizacao: {
+        sys: {
+          country: 'BR'
+        },
+        name: 'Barueri'
+      },
       cor: 'Prata',
       finalPlaca: 9,
       marca: MarcaCarro.RENAULT
@@ -80,7 +105,12 @@ export class CarrosService {
       preco: 66500,
       ano: '2019/2019',
       kmRodados: 42800,
-      localizacao: 'Praia Grande, SP',
+      localizacao: {
+        sys: {
+          country: 'BR'
+        },
+        name: 'Barueri'
+      },
       cor: 'Prata',
       finalPlaca: 9,
       marca: MarcaCarro.HYUNDAI
@@ -88,19 +118,24 @@ export class CarrosService {
     {
       id: 7,
       imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDVSySJBRUJ1utuUmRVbffg0gNjKG5Uwx1Pg&usqp=CAU',
-      modelo: 'Honda Civic Type-R 2022',
-      descricao: '2.0L turbo, 320 cv a 6500 rpm, 40,8 kgfm a 4500 rpm',
+      modelo: 'HONDA CIVIC TYPE-R 2022',
+      descricao: '2.0L TURBO, 320 CV C 6500 RPM, 40,8 KGFM A 4500 RPM',
       preco: 184900,
       ano: '2022/2022',
       kmRodados: 300,
-      localizacao: 'Araraquara, SP',
+      localizacao: {
+        sys: {
+          country: 'BR'
+        },
+        name: 'Barueri'
+      },
       cor: 'Beje',
       finalPlaca: 9,
       marca: MarcaCarro.HONDA
     }
   ];
 
-  pushCarros(carro: Carro){
+  pushCarros(carro: Carro) {
     this.carros.push(carro);
   }
 

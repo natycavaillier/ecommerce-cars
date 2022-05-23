@@ -1,90 +1,53 @@
 <div class="container containerCadastro  mt-5 p-5">
   <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()" class="mb-3">
-      <div class="text-center mb-3">
-        <h1>Faça o seu cadastro</h1>
-      </div>
-      <div class="mb-4 mt-4">
-          <label for="nome" class="form-label"></label>
-          <input  formControlName ="nome"type="text" class="form-control" id="nome" placeholder="Nome Completo">
-          <small class="text-danger" *ngIf="nome?.touched && nome?.invalid">
-              <span *ngIf="nome?.hasError('required')">Campo obrigatório</span>
-              <span *ngIf="nome?.hasError('minLength')">Mínimo 4 caracteres</span>
-          </small>
-        </div>
-      <div class="mb-4 mt-4">
-        <input formControlName="email" type="email" class="form-control" id="inputEmail4" placeholder="Email">
-        <small class="text-danger" *ngIf="email?.touched && email?.invalid">
-          <span *ngIf="email?.hasError('required')">Campo obrigatório</span>
-          <span *ngIf="email?.hasError('minLength')">Email inválido</span>
-          <span *ngIf="email?.hasError('seuCadastro')">Não permitido</span>
+    <div class="text-center mb-3">
+      <h1>Faça o seu cadastro</h1>
+    </div>
+    <div class="mb-4 mt-4">
+      <label for="nome" class="form-label"></label>
+      <input [(ngModel)]="login.nome" formControlName="nome" type="text" class="form-control" id="nome"
+        placeholder="Nome Completo">
+      <small class="text-danger" *ngIf="nome?.touched && nome?.invalid">
+        <span *ngIf="nome?.hasError('required')">Campo obrigatório</span>
+        <span *ngIf="nome?.hasError('minlength')">Mínimo 4 caracteres</span>
       </small>
-      </div>
-      <div class="mb-4 mt-4">
-        <input formControlName="senha" type="password" class="form-control" id="inputPassword4" placeholder="Senha">
-        <small class="text-danger" *ngIf="senha?.touched && senha?.invalid">
-          <span *ngIf="senha?.hasError('required')">Campo obrigatório</span>
-          <span *ngIf="senha?.hasError('minLength')">senha inválida</span>
-        </small>
-      </div>
-      <div class="row mb-4 mt-4">
-
+    </div>
+    <div class="mb-4 mt-4">
+      <input [(ngModel)]="login.email" formControlName="email" type="email" class="form-control" id="inputEmail4"
+        placeholder="Email">
+      <small class="text-danger" *ngIf="email?.touched && email?.invalid">
+        <span *ngIf="email?.hasError('required')">Campo obrigatório</span>
+        <span *ngIf="email?.hasError('email')">Formato de email inválido</span>
+      </small>
+    </div>
+    <div class="mb-4 mt-4">
+      <input [(ngModel)]="login.senha" formControlName="senha" type="password" class="form-control" id="inputPassword4"
+        placeholder="Senha">
+      <small class="text-danger" *ngIf="senha?.touched && senha?.invalid">
+        <span *ngIf="senha?.hasError('required')">Campo obrigatório</span>
+        <span *ngIf="senha?.hasError('minlength')">Mínimo de 5 caracteres</span>
+      </small>
+    </div>
+    <div class="row mb-4 mt-4">
       <div class="col">
-        <select formControlName="selecione" id="inputState" class="form-select">
-          <option>Selecione o seu estado</option>
-          <option>AC</option>
-          <option>AL</option>
-          <option>AP</option>
-          <option>AM</option>
-          <option>BA</option>
-          <option>CE</option>
-          <option>DF</option>
-          <option>ES</option>
-          <option>GO</option>
-          <option>MA</option>
-          <option>MT</option>
-          <option>MS</option>
-          <option>MG</option>
-          <option>PA</option>
-          <option>PB</option>
-          <option>PR</option>
-          <option>PE</option>
-          <option>PI</option>
-          <option>RJ</option>
-          <option>RN</option>
-          <option>RS</option>
-          <option>RO</option>
-          <option>RR</option>
-          <option>SC</option>
-          <option>SP</option>
-          <option>SE</option>
-          <option>TO</option>
-        </select>
-      </div>
-
-        <div class="col">
-          <input formControlName="cep" type="number" class="form-control" id="inputNumber" placeholder="CEP">
-          <small class="text-danger" *ngIf="cep?.touched && cep?.invalid">
-            <span *ngIf="cep?.hasError('required')">Campo obrigatório</span>
-            <span *ngIf="cep?.hasError('minLength')">Insira um CEP válido</span>
+        <input [(ngModel)]="login.estado" formControlName="estado" type="text" class="form-control" id="inputState"
+          placeholder="Estado">
+        <small class="text-danger" *ngIf="estado?.touched && estado?.invalid">
+          <span *ngIf="estado?.hasError('required')">Campo obrigatório</span>
         </small>
-        </div>
-
       </div>
-
-      <div class="mb-4 mt-4">
-        <input formControlName="cidade" type="text" class="form-control" id="inputCity" placeholder="Cidade">
+      <div class="col">
+        <input [(ngModel)]="login.cidade" formControlName="cidade" type="text" class="form-control" id="inputCity"
+          placeholder="Cidade">
         <small class="text-danger" *ngIf="cidade?.touched && cidade?.invalid">
           <span *ngIf="cidade?.hasError('required')">Campo obrigatório</span>
-          
-      </small>
+  
+        </small>
       </div>
-      
-      <div class="mt-5" >
-        <button class="bottonNeg btn btn-primary" [disabled]="cadastroForm.invalid">Cadastrar</button>
-      </div>
-    </form>
-  </div>  
-
-
-
-
+    </div>
+    
+    <div class="mt-5">
+      <button class="bottonNeg btn btn-primary" [disabled]="cadastroForm.invalid">Cadastrar</button>
+    </div>
+  </form>
+</div>

@@ -1,15 +1,28 @@
-<div class="container mt-5">
-  <form id="form" class="form">
-    <h2>Log-in</h2>
-
-    <div class="form-control">
-      <label for="email">Email: </label>
-      <input type="text" id="email" placeholder="Enter email" />
-      <br />
-      <label for="password">Password: </label>
-      <input type="password" id="password" placeholder="Enter password" />
+<div class="container containerLogin mt-5 p-5">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="mb-3">
+    <div class="text-center mb-3">
+      <h1>Faça o seu Login</h1>
+    </div> 
+    <div class="mb-4 mt-4">
+      <input [(ngModel)]="loginEmail" formControlName="email" type="email" class="form-control" id="inputEmail4" placeholder="Email">
+      <small class="text-danger" *ngIf="email?.touched && email?.invalid">
+        <span *ngIf="email?.hasError('required')">Campo obrigatório</span>
+        <span *ngIf="email?.hasError('minlength')">Email inválido</span>
+    </small>
     </div>
 
-    <button type="submit">Submit</button>
+    <div class="mb-4 mt-4">
+      <input [(ngModel)]="loginSenha" formControlName="senha" type="password" class="form-control" id="inputPassword4" placeholder="Senha">
+      <small class="text-danger" *ngIf="senha?.touched && senha?.invalid">
+        <span *ngIf="senha?.hasError('required')">Campo obrigatório</span>
+        <span *ngIf="senha?.hasError('minlength')">Mínimo 5 caracteres</span>
+      </small>
+    </div>
+
+    <p>Ainda não tem uma conta? Cadastre-se <a [routerLink]="'/cadastro'">aqui</a></p>
+
+    <div>
+      <button class="bottonNeg btn btn-primary" [disabled]="loginForm.invalid">Login</button>
+    </div>
   </form>
 </div>

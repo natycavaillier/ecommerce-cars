@@ -3,28 +3,29 @@
     
     <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" class="m-1">
       <div class="text-center mb-5">
-        <h4>
-          A sua opinião é muito importante para nós, conte-nos como foi a sua
+       
+        <h5>
+          Conte-nos como foi a sua
           experiencia em nosso site!
-        </h4>
+        </h5>
       </div>
-      <div class="row">
+      <div class="row ">
+
         <div class="col-md-4">
           <input type="radio" name="feed" class="pointer" /> &nbsp;&nbsp;<label
             for="comentario"
             class="form-label"
             >Comentário</label
           >
-          <span *ngIf="comentario?.hasError('required')"></span>
         </div>
 
         <div class="col-md-4">
           <input type="radio" name="feed" class="pointer" /> &nbsp;&nbsp;<label
             for="erro"
             class="form-label"
-            >Reportar Algum Erro</label
+            >Reportar Erro</label
           >
-          <span *ngIf="erro?.hasError('required')"></span>
+         
         </div>
         <div class="col-md-4">
           <input type="radio" name="feed" class="pointer" /> &nbsp;&nbsp;<label
@@ -32,14 +33,11 @@
             class="form-label"
             >Questionamentos</label
           >
-          <span *ngIf="questionamento?.hasError('required')"></span>
+          
         </div>
         <div class="form-group mt-4 mb-2">
           <input
-            formControlName="nome"
-            id="nome"
-            type="text"
-            class="form-control"
+            formControlName="nome" id="nome" type="text" class="form-control"
             placeholder="Nome Completo"
           />
           <small class="text-danger" *ngIf="nome?.touched && nome?.invalid">
@@ -75,7 +73,7 @@
         </div>
 
         <div class="mt-5">
-          <button class="bottonFeedback btn btn-primary" type="submit">
+          <button class="bottonNeg btn btn-primary" [disabled]="feedbackForm.invalid">
             Envie o seu Feedback
           </button>
         </div>

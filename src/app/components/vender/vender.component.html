@@ -46,18 +46,10 @@
                     <span *ngIf="ano?.hasError('required')">O ano é obrigatório!</span>
                 </small>
             </div>
-        </div>
-        <div class="row mb-4 mt-4">
             <div class="col">
                 <input [(ngModel)]="carro.kmRodados" formControlName="kmRodados" type="number" class="form-control" placeholder="Quilometragem">
                 <small *ngIf="kmRodados?.touched && kmRodados?.invalid" class="text-danger">
                     <span *ngIf="kmRodados?.hasError('required')">A quilometragem é obrigatória!</span>
-                </small>
-            </div>
-            <div class="col">
-                <input [(ngModel)]="carro.localizacao" formControlName="localizacao" type="string" class="form-control" placeholder="Localização">
-                <small *ngIf="localizacao?.touched && localizacao?.invalid" class="text-danger">
-                    <span *ngIf="localizacao?.hasError('required')">A localização é obrigatória!</span>
                 </small>
             </div>
         </div>
