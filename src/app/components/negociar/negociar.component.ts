@@ -14,6 +14,7 @@ export class NegociarComponent implements OnInit, OnDestroy {
 
   constructor(private fb: FormBuilder, private rota: ActivatedRoute, private router: Router, private carrosService: CarrosService, private loginService: LoginService) { }
 
+
   carro: Carro = {} as Carro;
   id?: number;
   private inscricao: any;
@@ -43,7 +44,6 @@ export class NegociarComponent implements OnInit, OnDestroy {
 
       this.id = +params['id'];
       this.carro = this.carrosService.getCarro(this.id);
-
     })
   }
 
