@@ -25,6 +25,7 @@
 
 .buttonNeg {
     width: 100%;
+    margin-top: 4rem;
     background-color: #2155CD;
     box-shadow: #123076 4px 4px 0px;
     border-radius: 8px;
@@ -48,3 +49,6 @@
 }
 
 
+/* .formNegociar {
+    margin-top: 4rem;
+} */

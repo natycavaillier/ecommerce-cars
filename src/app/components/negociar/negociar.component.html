@@ -10,7 +10,7 @@
             <div class="row justify-content-between">
                 <div class="col-sm">
                     <strong>Cidade</strong>
-                    <p>{{carro.localizacao}}</p>
+                    <p>{{carro.localizacao.name}}</p>
                 </div>
                 <div class="col-sm">
                     <strong>Ano</strong>
@@ -45,16 +45,8 @@
         <div class="d-flex flex-shrink-1 bd-highlight containerForm ">
             <div class="containerNeg ">
                 <h1>{{carro.preco | currency: 'BRL'}}</h1>
-                <form [formGroup]="negociarForm" (ngSubmit)="onSubmit()">
-                    <!-- <div class="mb-3">
-                            <label for="nome" class="form-label"></label>
-                            <input formControlName="nome" type="text" class="form-control" placeholder="Nome">
-                            <small class="text-danger" *ngIf="nome?.invalid && nome?.touched">
-                                <span *ngIf="nome?.hasError('required')">O nome é obrigatorio!</span>
-                                <span *ngIf="nome?.hasError('minlength')">O minimo é 4 caracteres</span>
-                            </small>
-                        </div> -->
-                    <div class="mb-3">
+                <form [formGroup]="negociarForm" class="formNegociar" (ngSubmit)="onSubmit()">
+                    <div class="mb-3 mt-4">
                         <label for="email" class="form-label"></label>
                         <input [(ngModel)]="loginEmail" formControlName="email" type="email" class="form-control"
                             placeholder="E-mail">
