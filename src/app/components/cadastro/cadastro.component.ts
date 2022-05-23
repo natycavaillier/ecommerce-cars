@@ -1,16 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, ValidationErrors, Validators } from '@angular/forms';
-
-
-function onlyCadastro(control: AbstractControl): ValidationErrors | null {
-  if (Validators.email(control) === null && Validators.required(control) === null) {
-    if(!control.value.includes("@gmail.com")) {
-      return {onlyCadastro: true};
-    }
-  }
-
-  return null;
-}
+import { Login } from 'src/app/models/login';
+import { LoginService } from 'src/app/shared/services/login/login.service';
 
 
 @Component({
@@ -20,40 +11,53 @@ function onlyCadastro(control: AbstractControl): ValidationErrors | null {
 })
 export class CadastroComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private loginService: LoginService) { }
+
+  login: Login = {} as Login;
+
   cadastroForm = this.fb.group({
     nome: ['', [Validators.required, Validators.minLength(4)]],
-    email: ['', [Validators.required, Validators.email, onlyCadastro]],
+    email: ['', [Validators.required, Validators.email]],
     senha: ['', [Validators.required, Validators.minLength(5)]],
+    estado: ['', [Validators.required]],
     cidade: ['', [Validators.required]],
-    cep: ['', [Validators.required, Validators.minLength(8)]]
   });
 
-
-  get nome () {
+ //#region Getters
+  get nome() {
     return this.cadastroForm.get('nome');
   }
 
-  get email () {
+  get email() {
     return this.cadastroForm.get('email');
   }
 
-  get senha () {
+  get senha() {
     return this.cadastroForm.get('senha');
   }
 
-  get cidade () {
+  get cidade() {
     return this.cadastroForm.get('cidade');
   }
 
-  get cep () {
+  get cep() {
     return this.cadastroForm.get('cep');
   }
 
+  get estado() {
+    return this.cadastroForm.get('estado');
+  }
+  //#endregion
+
+  getPrimeiroNome(nome: string) {
+    let primeiroNome = nome.split(' ');
+    return primeiroNome[0];
+  }
+
   onSubmit() {
-    this.cadastroForm.reset();
-    alert('Cadastro feito com sucesso!');
-   
+    this.loginService.pushLogin(this.login);
+    console.log(this.loginService.getLogins());
+    alert(`Cadastro feito com sucesso! Bem-vindo(a) ${this.loginService.getPrimeiroNome(this.login.nome)}`);
   }
 
   ngOnInit(): void {
