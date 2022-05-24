@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Carro } from 'src/app/models/carro';
 import { CarrosService } from 'src/app/shared/services/carros/carros.service';
+import { LoginService } from 'src/app/shared/services/login/login.service';
 
 @Component({
   selector: 'app-tenho-interesse',
@@ -15,7 +16,7 @@ export class TenhoInteresseComponent implements OnInit {
   id?: number;
   private inscricao: any;
 
-  constructor(private route: ActivatedRoute, private carroService: CarrosService,) { }
+  constructor(private route: ActivatedRoute, private carroService: CarrosService, private loginService: LoginService) { }
 
   ngOnInit(): void {
     this.inscricao = this.route.params.subscribe(params => {
